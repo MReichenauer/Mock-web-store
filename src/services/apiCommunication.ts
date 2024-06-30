@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CategoryList } from "./Types";
+import { CategoryList, ProductsResponse } from "./Types";
 
 const BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
 
@@ -18,5 +18,12 @@ const get = async <T>(endpoint: string) => {
 
 export const getCategoryList = async () => {
 	const res = await get<CategoryList>("products/category-list");
+	return res;
+};
+
+export const getAllProducts = async (limit: number, skip: number) => {
+	const res = await get<ProductsResponse>(
+		`/products?limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+	);
 	return res;
 };
