@@ -47,7 +47,7 @@ const NavBar = () => {
 										<NavDropdown.Item
 											as={NavLink}
 											key={index}
-											to={`/${category}`}
+											to={`/category/${category}`}
 											onClick={handleToggle}
 										>
 											{category}

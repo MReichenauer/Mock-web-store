@@ -14,4 +14,5 @@ export type ProductsResponse = {
 	total: number;
 	skip: number;
 	limit: number;
+	category?: string;
 };

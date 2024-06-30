@@ -1,49 +1,55 @@
-import { useSearchParams } from "react-router-dom";
-import { useAllProducts } from "../hooks/useAllProducts";
+import { useParams, useSearchParams } from "react-router-dom";
 import { ProductOverview } from "../services/Types";
 import Pagination from "./Pagination";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import OverviewCard from "./cards/OverviewCard";
+import { useSingleCategory } from "../hooks/useSingleCategory";
 
-const AllProducts = () => {
+const ProductsByCategory = () => {
+	const { category } = useParams();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const page = Number(searchParams.get("page") || 1);
 	const limit = 8;
 	const skip = (page - 1) * limit;
 
+	if (!category) {
+		return;
+	}
+
 	const {
-		data: productsData,
-		isError: productsIsError,
-		error: productsError,
-		isSuccess: productsIsSuccess,
-		isLoading: productsIsLoading,
-	} = useAllProducts(limit, skip);
+		data: categoryData,
+		isError: categoryIsError,
+		error: categoryError,
+		isSuccess: categoryIsSuccess,
+		isLoading: categoryIsLoading,
+	} = useSingleCategory(limit, skip, category);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ page: String(newPage) });
 	};
 
-	if (productsIsLoading) {
+	if (categoryIsLoading) {
 		return <p>Loading...</p>;
 	}
 
-	if (productsIsError) {
-		return <p>Error loading products: {productsError.message}</p>;
+	if (categoryIsError) {
+		return <p>Error loading products: {categoryError.message}</p>;
 	}
 
-	if (!productsData) {
+	if (!categoryData) {
 		return;
 	}
 
 	// Total products divided by the limit = total pages
-	const totalPages = Math.ceil(productsData.total / limit);
+	const totalPages = Math.ceil(categoryData.total / limit);
 
 	return (
 		<Container>
+			<h2>Category: {category}</h2>
 			<Row>
-				{productsIsSuccess &&
-					productsData.products.map((product: ProductOverview) => (
+				{categoryIsSuccess &&
+					categoryData.products.map((product: ProductOverview) => (
 						<OverviewCard
 							key={product.id}
 							id={product.id}
@@ -64,4 +70,4 @@ const AllProducts = () => {
 	);
 };
 
-export default AllProducts;
+export default ProductsByCategory;

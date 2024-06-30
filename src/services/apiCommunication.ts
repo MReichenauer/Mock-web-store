@@ -27,3 +27,14 @@ export const getAllProducts = async (limit: number, skip: number) => {
 	);
 	return res;
 };
+
+export const getSingleCategory = async (
+	limit: number,
+	skip: number,
+	category: string,
+) => {
+	const res = await get<ProductsResponse>(
+		`/products/category/${category}?limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+	);
+	return res;
+};
