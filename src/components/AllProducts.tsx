@@ -29,7 +29,7 @@ const AllProducts = () => {
 	}
 
 	if (productsIsError) {
-		return <p>Error loading products: {productsError.message}</p>;
+		return <p>Error: {productsError.message}</p>;
 	}
 
 	if (!productsData) {
