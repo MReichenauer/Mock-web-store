@@ -7,12 +7,26 @@ import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 type DetailCardProps = {
 	data: ProductDetails;
 };
 
 const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
+	const { addToCart } = useCart();
+
+	const handleAddToCart = () => {
+		addToCart({
+			id: data.id,
+			title: data.title,
+			price: data.price,
+			thumbnail: data.thumbnail,
+			stock: data.stock,
+			quantity: 1,
+		});
+	};
+
 	return (
 		<div>
 			<Row>
@@ -30,7 +44,11 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 						<Card.Body>
 							<div className="d-flex align-items-center">
 								<Card.Title>{data.title}</Card.Title>
-								<Button variant="success" className="ms-auto">
+								<Button
+									onClick={handleAddToCart}
+									variant="success"
+									className="ms-auto"
+								>
 									Add to cart
 								</Button>
 							</div>

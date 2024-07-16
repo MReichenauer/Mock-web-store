@@ -21,6 +21,7 @@ export type ProductDetails = {
 	id: number;
 	title: string;
 	images: string[];
+	thumbnail: string;
 	description: string;
 	category: string;
 	price: number;
