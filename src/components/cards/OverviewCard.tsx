@@ -41,7 +41,9 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 					<Card.Text>Rating: {rating.toFixed(1)}/5 ⭐</Card.Text>
 					<Card.Text>Stock: {stock}</Card.Text>
 					<div className="d-flex justify-content-end">
-						<Button onClick={handleAddToCart}>Buy</Button>
+						<Button variant="success" onClick={handleAddToCart}>
+							Add to cart
+						</Button>
 					</div>
 				</Card.Body>
 			</Card>
