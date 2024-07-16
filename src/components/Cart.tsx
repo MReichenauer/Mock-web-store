@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import { Link } from "react-router-dom";
 const Cart = () => {
 	const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
 		useCart();
@@ -17,8 +18,15 @@ const Cart = () => {
 						<Card.Body>
 							<Card.Title>
 								<div className="d-flex">
-									<Image className="cartThumbnail" src={item.thumbnail}></Image>
-									<div className="ms-2">{item.title}</div>
+									<Link to={`/product/${item.id}`}>
+										<Image
+											className="cartThumbnail"
+											src={item.thumbnail}
+										></Image>
+									</Link>
+									<Link to={`/product/${item.id}`}>
+										<div className="ms-1">{item.title}</div>
+									</Link>
 									<Button
 										className="ms-auto removeButton"
 										variant="danger"
