@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import { useSingleProduct } from "../hooks/useSingleProduct";
-
+import Container from "react-bootstrap/Container";
 import DetailCard from "./cards/DetailCard";
 
 const ProductDetails = () => {

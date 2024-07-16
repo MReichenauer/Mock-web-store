@@ -1,10 +1,10 @@
+import { useSingleCategory } from "../hooks/useSingleCategory";
 import { useParams, useSearchParams } from "react-router-dom";
 import { ProductOverview } from "../services/Types";
-import Pagination from "./Pagination";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import OverviewCard from "./cards/OverviewCard";
-import { useSingleCategory } from "../hooks/useSingleCategory";
+import Pagination from "./Pagination";
+import Row from "react-bootstrap/Row";
 
 const ProductsByCategory = () => {
 	const { category } = useParams();

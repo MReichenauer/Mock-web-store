@@ -47,3 +47,12 @@ export type Review = {
 	reviewerName: string;
 	reviewerEmail: string;
 };
+
+export type CartItem = {
+	id: number;
+	title: string;
+	price: number;
+	quantity: number;
+	thumbnail: string;
+	stock: number;
+};

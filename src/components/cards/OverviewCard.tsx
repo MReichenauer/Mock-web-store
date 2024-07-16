@@ -1,8 +1,8 @@
-import React from "react";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 
 type OverviewCardProps = {
 	id: number;
@@ -21,6 +21,12 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 	rating,
 	stock,
 }) => {
+	const { addToCart } = useCart();
+
+	const handleAddToCart = () => {
+		addToCart({ id, title, price, thumbnail, stock, quantity: 1 });
+	};
+
 	return (
 		<Col key={id} xs={12} sm={6} md={6} lg={4} xl={3}>
 			<Card>
@@ -35,7 +41,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 					<Card.Text>Rating: {rating.toFixed(1)}/5 ⭐</Card.Text>
 					<Card.Text>Stock: {stock}</Card.Text>
 					<div className="d-flex justify-content-end">
-						<Button>Buy</Button>
+						<Button onClick={handleAddToCart}>Buy</Button>
 					</div>
 				</Card.Body>
 			</Card>

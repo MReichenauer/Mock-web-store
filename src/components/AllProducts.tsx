@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 import { useAllProducts } from "../hooks/useAllProducts";
 import { ProductOverview } from "../services/Types";
-import Pagination from "./Pagination";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Pagination from "./Pagination";
 import OverviewCard from "./cards/OverviewCard";
+import Row from "react-bootstrap/Row";
 
 const AllProducts = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
