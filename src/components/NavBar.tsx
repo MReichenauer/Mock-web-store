@@ -1,7 +1,7 @@
 import "../assets/scss/NavBar.scss";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Cart from "./Cart";
 import Container from "react-bootstrap/Container";
@@ -89,9 +89,15 @@ const NavBar = () => {
 						</Offcanvas.Body>
 						<div className="cartFooter d-flex justify-content-between">
 							<h5 className="mt-1">Total: ${totalPrice.toFixed(2)}</h5>
-							<Button disabled={cart.length <= 0} variant="success">
-								Checkout
-							</Button>
+							<Link to={"/checkout"}>
+								<Button
+									onClick={handleCartToggle}
+									disabled={cart.length <= 0}
+									variant="success"
+								>
+									Checkout
+								</Button>
+							</Link>
 						</div>
 					</Offcanvas>
 				</>
