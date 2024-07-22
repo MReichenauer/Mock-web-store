@@ -19,7 +19,7 @@ const NavBar = () => {
 		isSuccess: isSuccessCategories,
 	} = useAllCategories();
 
-	const { cart } = useCart();
+	const { cart, totalPrice } = useCart();
 
 	const [expanded, setExpanded] = useState(false);
 	const [showCart, SetShowCart] = useState(false);
@@ -34,11 +34,6 @@ const NavBar = () => {
 	const handleCartToggle = () => {
 		SetShowCart(!showCart);
 	};
-
-	const totalPrice = cart.reduce(
-		(total, item) => total + item.price * item.quantity,
-		0,
-	);
 
 	return (
 		<>
@@ -87,8 +82,8 @@ const NavBar = () => {
 						<Offcanvas.Body className="pb-0">
 							<Cart />
 						</Offcanvas.Body>
-						<div className="cartFooter d-flex justify-content-between">
-							<h5 className="mt-1">Total: ${totalPrice.toFixed(2)}</h5>
+						<div className="cartFooter">
+							<h5 className="mt-1">Total: ${totalPrice()}</h5>
 							<Link to={"/checkout"}>
 								<Button
 									onClick={handleCartToggle}

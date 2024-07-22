@@ -1,0 +1,22 @@
+.checkoutCart {
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.4);
+    max-height: 70vh;
+    overflow-y: auto;
+
+    div {
+        img {
+            max-height: 5rem;
+        }
+    }
+}
+
+.checkoutCartItem {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.toPaymentButton {
+    max-height: 3rem;
+}
