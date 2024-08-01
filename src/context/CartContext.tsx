@@ -8,6 +8,7 @@ type CartContextType = {
 	increaseQuantity: (id: number) => void;
 	decreaseQuantity: (id: number) => void;
 	totalPrice: () => number;
+	clearCart: () => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -68,7 +69,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	};
 
 	const totalPrice = () => {
-		return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+		return parseFloat(
+			cart
+				.reduce((total, item) => total + item.price * item.quantity, 0)
+				.toFixed(2),
+		);
+	};
+
+	const clearCart = () => {
+		setCart([]);
 	};
 
 	return (
@@ -80,6 +89,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 				increaseQuantity,
 				decreaseQuantity,
 				totalPrice,
+				clearCart,
 			}}
 		>
 			{children}

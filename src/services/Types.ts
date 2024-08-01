@@ -57,3 +57,32 @@ export type CartItem = {
 	thumbnail: string;
 	stock: number;
 };
+
+export type CardFormData = {
+	firstName: string;
+	lastName: string;
+	cardNumber: string;
+	expiration: string;
+	cvv: string;
+	email: string;
+	phoneNumber: string;
+	streetName: string;
+	streetNumber: string;
+	city: string;
+	state: string;
+	zipCode: string;
+	country: string;
+};
+
+export type InvoiceFormData = {
+	firstName: string;
+	lastName: string;
+	email: string;
+	phoneNumber: string;
+	streetName: string;
+	streetNumber: string;
+	city: string;
+	state: string;
+	zipCode: string;
+	country: string;
+};

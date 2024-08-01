@@ -1,12 +1,13 @@
 import "../assets/scss/Checkout.scss";
-import { CartItem } from "../services/Types";
-import { useCart } from "../context/CartContext";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
+import { CartItem } from "../services/Types";
 import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
+import { useCart } from "../context/CartContext";
 
 const CheckoutPage = () => {
 	const {
@@ -81,9 +82,11 @@ const CheckoutPage = () => {
 			<div className="d-flex">
 				<h3 className="mt-4">Total: ${totalPrice()}</h3>
 				<div className="ms-auto mt-4 ms-auto">
-					<Button variant="success" className="toPaymentButton">
-						Continue to payment
-					</Button>
+					<Link to={"/payment"}>
+						<Button variant="success" className="toPaymentButton">
+							Continue to payment
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</Container>
