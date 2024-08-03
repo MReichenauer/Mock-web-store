@@ -13,8 +13,6 @@ const PaymentPage = () => {
 
 	return (
 		<Container>
-			<h1 className="mb-3 h2">Select payment method</h1>
-
 			<Row>
 				<Col md={8}>
 					<PaymentForm />

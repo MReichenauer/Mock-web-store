@@ -1,4 +1,5 @@
 import Form from "react-bootstrap/Form";
+import "../assets/scss/InputFieldForm.scss";
 
 type InputFieldFormProps = {
 	label: string;
@@ -29,7 +30,7 @@ const InputFieldForm = ({
 			onChange={onChange}
 			required
 		/>
-		{error && <p>{error}</p>}
+		{error && <p className="error">{error}</p>}
 	</Form.Group>
 );
 
