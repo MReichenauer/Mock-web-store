@@ -21,7 +21,7 @@ const OrderSummary = ({ cart, total, shipping }: OrderSummaryProps) => {
 				</div>
 			) : (
 				<div>
-					<h3 className="mb-2">Total cost: ${totalWithShipping}</h3>
+					<h3 className="mb-2">Total cost: ${totalWithShipping.toFixed(2)}</h3>
 					<p className="mb-0">Products: ${total}</p>
 					<p>Shipping: ${shipping}</p>
 				</div>

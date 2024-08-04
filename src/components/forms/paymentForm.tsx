@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import Form from "react-bootstrap/Form";
 import InvoicePaymentForm from "./InvoicePaymentForm";
-import { Image, ListGroup, ListGroupItem } from "react-bootstrap";
+import Receipt from "../Receipt";
 
 const PaymentForm = () => {
 	const { cart, clearCart, totalPrice } = useCart();
@@ -80,59 +80,14 @@ const PaymentForm = () => {
 			)}
 
 			{orderDone && personInfo && (
-				<>
-					<div>
-						<h3>Your order</h3>
-
-						{products.map((item) => (
-							<ListGroup key={item.id}>
-								<ListGroupItem>
-									<div className="d-flex">
-										<Image
-											className="cartThumbnail"
-											src={item.thumbnail}
-										></Image>
-										<div className="d-flex flex-column">
-											<p>{item.title}</p>
-											<p>Quantity: {item.quantity}</p>
-											<p>Price per unit: ${item.price}</p>
-										</div>
-									</div>
-								</ListGroupItem>
-							</ListGroup>
-						))}
-					</div>
-
-					<div>
-						<h4>Order summary</h4>
-						<p>Order will be sent within 1-2 workdays</p>
-						<p>Total cost of products: {totalOrderPrice}</p>
-						<p>
-							Shipping: {(totalOrderPrice as number) <= 100 ? "$12" : "Free"}
-						</p>
-						<ul>
-							<li>
-								Name: {personInfo?.firstName} {personInfo?.lastName}{" "}
-							</li>
-							<li>Email: {personInfo?.email}</li>
-							<li>Phone: {personInfo?.phoneNumber}</li>
-							<li>City: {personInfo?.city}</li>
-							<li>Country: {personInfo?.country}</li>
-							<li>State/County: {personInfo?.state}</li>
-							<li>Street name: {personInfo?.streetName}</li>
-							<li>Street number: {personInfo?.streetNumber}</li>
-							<li>Zip code: {personInfo?.zipCode}</li>
-							{cardNumber && (
-								<>
-									<h5>Card Details</h5>
-									<li>Card number: {cardNumber}</li>
-									<li>CVV: {cvv}</li>
-									<li>Expiration: {expiration}</li>
-								</>
-							)}
-						</ul>
-					</div>
-				</>
+				<Receipt
+					products={products}
+					personInfo={personInfo}
+					totalOrderPrice={totalOrderPrice as number}
+					cardNumber={cardNumber}
+					cvv={cvv}
+					expiration={expiration}
+				/>
 			)}
 		</>
 	);

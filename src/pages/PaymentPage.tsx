@@ -2,7 +2,6 @@ import "../assets/scss/PaymentForm.scss";
 import OrderSummary from "../components/OrderSummary";
 import PaymentForm from "../components/forms/paymentForm";
 import { useCart } from "../context/CartContext";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
@@ -14,13 +13,11 @@ const PaymentPage = () => {
 	return (
 		<Container>
 			<Row>
-				<Col md={8}>
-					<PaymentForm />
-				</Col>
+				<PaymentForm />
 
-				<Col md={4}>
+				{cart.length !== 0 && (
 					<OrderSummary cart={cart} total={total} shipping={shipping} />
-				</Col>
+				)}
 			</Row>
 		</Container>
 	);
