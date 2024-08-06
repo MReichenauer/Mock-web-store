@@ -1,0 +1,28 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.searchContainer div {
+    width: 500px;
+ }
+
+ @media screen and (max-width: 600px) {
+    .searchContainer div {
+        width: 400px;
+     }
+  }
+
+  @media screen and (max-width: 400px) {
+    .searchContainer div {
+        width: 300px;
+     }
+  }
+
+  @media screen and (max-width: 300px) {
+    .searchContainer div {
+        width: 250px;
+     }
+  }

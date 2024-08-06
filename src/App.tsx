@@ -6,11 +6,13 @@ import CategoryPage from "./pages/CategoryPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import PaymentPage from "./pages/PaymentPage";
+import SearchBar from "./components/SearchBar";
 
 function App() {
 	return (
 		<div id="app">
 			<NavBar />
+			<SearchBar />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/category/:category" element={<CategoryPage />} />
