@@ -5,12 +5,16 @@ import Container from "react-bootstrap/Container";
 import Pagination from "./Pagination";
 import OverviewCard from "./cards/OverviewCard";
 import Row from "react-bootstrap/Row";
+import { useState } from "react";
+import SortProducts from "./SortProducts";
 
 const AllProducts = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const page = Number(searchParams.get("page") || 1);
 	const limit = 8;
 	const skip = (page - 1) * limit;
+	const [sortBy, setSortBy] = useState("id");
+	const [order, setOrder] = useState("asc");
 
 	const {
 		data: productsData,
@@ -18,10 +22,15 @@ const AllProducts = () => {
 		error: productsError,
 		isSuccess: productsIsSuccess,
 		isLoading: productsIsLoading,
-	} = useAllProducts(limit, skip);
+	} = useAllProducts(limit, skip, sortBy, order);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ page: String(newPage) });
+	};
+
+	const handleSortChange = (sortAfter: string, sortOrder: string) => {
+		setSortBy(sortAfter);
+		setOrder(sortOrder);
 	};
 
 	if (productsIsLoading) {
@@ -41,6 +50,13 @@ const AllProducts = () => {
 
 	return (
 		<Container>
+			<Row>
+				<SortProducts
+					sortBy={sortBy}
+					order={order}
+					onSortChange={handleSortChange}
+				/>
+			</Row>
 			<Row>
 				{productsIsSuccess &&
 					productsData.products.map((product: ProductOverview) => (

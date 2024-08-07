@@ -21,9 +21,15 @@ export const getCategoryList = async () => {
 	return res;
 };
 
-export const getAllProducts = async (limit: number, skip: number) => {
+// Sort via id and asc is the default state of the api
+export const getAllProducts = async (
+	limit: number,
+	skip: number,
+	sortBy: string = "id",
+	orderBy: string = "asc",
+) => {
 	const res = await get<ProductsResponse>(
-		`/products?limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+		`/products?sortBy=${sortBy}&order=${orderBy}&limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
 	);
 	return res;
 };
