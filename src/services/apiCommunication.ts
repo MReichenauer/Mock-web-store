@@ -43,3 +43,14 @@ export const getSingleProduct = async (id: number) => {
 	const res = await get<ProductDetails>(`products/${id}`);
 	return res;
 };
+
+export const getProductsBySearch = async (
+	limit: number,
+	skip: number,
+	query: string,
+) => {
+	const res = await get<ProductsResponse>(
+		`/products/search?q=${query}&limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+	);
+	return res;
+};
