@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import OverviewCard from "./cards/OverviewCard";
 import Pagination from "./Pagination";
 import Row from "react-bootstrap/Row";
+import { useState } from "react";
+import SortProducts from "./SortProducts";
 
 const ProductsByCategory = () => {
 	const { category } = useParams();
@@ -12,6 +14,8 @@ const ProductsByCategory = () => {
 	const page = Number(searchParams.get("page") || 1);
 	const limit = 8;
 	const skip = (page - 1) * limit;
+	const [sortBy, setSortBy] = useState("id");
+	const [order, setOrder] = useState("asc");
 
 	if (!category) {
 		return;
@@ -23,10 +27,15 @@ const ProductsByCategory = () => {
 		error: categoryError,
 		isSuccess: categoryIsSuccess,
 		isLoading: categoryIsLoading,
-	} = useSingleCategory(limit, skip, category);
+	} = useSingleCategory(limit, skip, category, sortBy, order);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ page: String(newPage) });
+	};
+
+	const handleSortChange = (sortAfter: string, sortOrder: string) => {
+		setSortBy(sortAfter);
+		setOrder(sortOrder);
 	};
 
 	if (categoryIsLoading) {
@@ -47,6 +56,13 @@ const ProductsByCategory = () => {
 	return (
 		<Container>
 			<h2>Category: {category}</h2>
+			<Row>
+				<SortProducts
+					sortBy={sortBy}
+					order={order}
+					onSortChange={handleSortChange}
+				/>
+			</Row>
 			<Row>
 				{categoryIsSuccess &&
 					categoryData.products.map((product: ProductOverview) => (

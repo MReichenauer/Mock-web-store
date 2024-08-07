@@ -38,9 +38,11 @@ export const getSingleCategory = async (
 	limit: number,
 	skip: number,
 	category: string,
+	sortBy: string = "id",
+	orderBy: string = "asc",
 ) => {
 	const res = await get<ProductsResponse>(
-		`/products/category/${category}?limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+		`/products/category/${category}?sortBy=${sortBy}&order=${orderBy}&limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
 	);
 	return res;
 };
@@ -54,9 +56,11 @@ export const getProductsBySearch = async (
 	limit: number,
 	skip: number,
 	query: string,
+	sortBy: string = "id",
+	orderBy: string = "asc",
 ) => {
 	const res = await get<ProductsResponse>(
-		`/products/search?q=${query}&limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
+		`/products/search?q=${query}&sortBy=${sortBy}&order=${orderBy}&limit=${limit}&skip=${skip}&select=title,price,rating,stock,thumbnail`,
 	);
 	return res;
 };

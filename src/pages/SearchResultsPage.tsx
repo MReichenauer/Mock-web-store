@@ -1,12 +1,12 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Spinner from "react-bootstrap/Spinner";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OverviewCard from "../components/cards/OverviewCard";
 import Pagination from "../components/Pagination";
 import { useProductsBySearch } from "../hooks/useProductsBySearch";
 import { ProductOverview } from "../services/Types";
+import SortProducts from "../components/SortProducts";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -14,16 +14,26 @@ const SearchResultsPage = () => {
 	const page = Number(searchParams.get("page") || 0);
 	const limit = 8;
 	const skip = (page - 1) * limit;
+	const [sortBy, setSortBy] = useState("id");
+	const [order, setOrder] = useState("asc");
 
 	const { data, isLoading, isError } = useProductsBySearch(
 		limit,
 		skip,
 		searchQuery,
+		sortBy,
+		order,
 	);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ query: searchQuery, page: String(newPage) });
 	};
+
+	const handleSortChange = (sortAfter: string, sortOrder: string) => {
+		setSortBy(sortAfter);
+		setOrder(sortOrder);
+	};
+
 	useEffect(() => {
 		setTimeout(() => {
 			window.scroll({
@@ -35,13 +45,20 @@ const SearchResultsPage = () => {
 		console.log("New page");
 	}, [page]);
 
-	if (isLoading) return <Spinner animation="border" />;
+	if (isLoading) return <p>Loading...</p>;
 	if (isError) return <p>Error getting data...</p>;
 
 	const totalPages = data ? Math.ceil(data.total / limit) : 0;
 
 	return (
 		<Container>
+			<Row>
+				<SortProducts
+					sortBy={sortBy}
+					order={order}
+					onSortChange={handleSortChange}
+				/>
+			</Row>
 			<Row>
 				{data &&
 					data.products.map((product: ProductOverview) => (
