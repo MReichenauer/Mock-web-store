@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "../src/assets/scss/App.scss";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavAndFooter/NavBar";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import PaymentPage from "./pages/PaymentPage";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/utils/SearchBar";
 import SearchResultsPage from "./pages/SearchResultsPage";
 
 function App() {

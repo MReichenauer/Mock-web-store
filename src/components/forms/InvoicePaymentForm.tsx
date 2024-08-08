@@ -7,7 +7,7 @@ import { ZodError } from "zod";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputFieldForm from "../InputFieldForm";
+import InputFieldForm from "./InputFieldForm";
 import Row from "react-bootstrap/Row";
 
 const schema = invoicePaymentSchema;

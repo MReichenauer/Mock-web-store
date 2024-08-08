@@ -3,10 +3,10 @@ import Row from "react-bootstrap/Row";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OverviewCard from "../components/cards/OverviewCard";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/utils/Pagination";
 import { useProductsBySearch } from "../hooks/useProductsBySearch";
 import { ProductOverview } from "../services/Types";
-import SortProducts from "../components/SortProducts";
+import SortProducts from "../components/utils/SortProducts";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
