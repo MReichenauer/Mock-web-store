@@ -40,11 +40,23 @@ type CardPaymentFormProps = {
 };
 
 const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
-	const { cart } = useCart();
+	const { cart, totalPrice } = useCart();
 	const [formData, setFormData] = useState<CardFormData>(initialFormData);
 	const [errors, setErrors] = useState<
 		Partial<Record<keyof CardFormData, string>>
 	>({});
+
+	const total = totalPrice();
+
+	const totalPlusShipping = () => {
+		if (total > 100) {
+			return total;
+		} else {
+			return total + 12;
+		}
+	};
+
+	const totalAmount = totalPlusShipping();
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -223,7 +235,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 					<Button variant="secondary">Previous step</Button>
 				</Link>
 				<Button type="submit" variant="success" disabled={cart.length === 0}>
-					Confirm order
+					Confirm order for ${totalAmount}
 				</Button>
 			</div>
 		</Form>
