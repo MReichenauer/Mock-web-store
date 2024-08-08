@@ -1,5 +1,5 @@
 import Form from "react-bootstrap/Form";
-import "../assets/scss/InputFieldForm.scss";
+import "../../assets/scss/InputFieldForm.scss";
 
 type InputFieldFormProps = {
 	label: string;

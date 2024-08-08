@@ -1,15 +1,15 @@
-import "../assets/scss/NavBar.scss";
-import { useCart } from "../context/CartContext";
+import "../../assets/scss/NavBar.scss";
+import { useCart } from "../../context/CartContext";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Cart from "./Cart";
+import Cart from "../Cart";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import useAllCategories from "../hooks/useAllCategories";
+import useAllCategories from "../../hooks/useAllCategories";
 
 const NavBar = () => {
 	const {

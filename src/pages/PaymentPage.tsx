@@ -21,9 +21,12 @@ const PaymentPage = () => {
 		<Container>
 			<Row>
 				<PaymentForm />
-				<Button variant="primary" onClick={toggleOrderSummary}>
-					{showOrderSummary ? "Hide order summary" : "Show order summary"}
-				</Button>
+				{cart.length !== 0 && (
+					<Button variant="primary" onClick={toggleOrderSummary}>
+						{showOrderSummary ? "Hide order summary" : "Show order summary"}
+					</Button>
+				)}
+
 				{cart.length !== 0 && showOrderSummary && (
 					<OrderSummary cart={cart} total={total} shipping={shipping} />
 				)}

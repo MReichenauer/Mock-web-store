@@ -1,4 +1,4 @@
-import "../assets/scss/SearchBar.scss";
+import "../../assets/scss/SearchBar.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
