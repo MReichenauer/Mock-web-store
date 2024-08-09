@@ -2,29 +2,29 @@
     position: relative;
 
     input {
-      width: 100%;
-      padding-top: 0.6rem;
-      padding-bottom: 0.6rem;
-      
+        width: 100%;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        
     }
 
     span {
-      position: absolute;
-      top: 50%;
-      left:0.8rem;
-      transform: translateY(-50%);
-      color: #636161;
-      transition: 0.3s ease;
-      pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left:0.8rem;
+        transform: translateY(-50%);
+        color: #636161;
+        transition: 0.3s ease;
+        pointer-events: none;
     }
-  
+
     input:focus + span,
     input:not(:placeholder-shown) + span {
-      top: -0.68rem;
-      font-size: 0.75rem;
-      color: #030303;
+        top: -0.68rem;
+        font-size: 0.75rem;
+        color: #030303;
     }
-  
+
     .noBorderRadiusRight {
         border-bottom-right-radius:0 ;
         border-top-right-radius: 0;
@@ -38,5 +38,4 @@
 
 
 
-  
-  
+

@@ -1,4 +1,5 @@
-import { Button } from "react-bootstrap";
+import "../../assets/scss/DetailCard.scss";
+import { Button, Container } from "react-bootstrap";
 import { ProductDetails, Review } from "../../services/Types";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
@@ -28,50 +29,64 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 	};
 
 	return (
-		<div>
-			<Row>
-				<Col md={6}>
+		<>
+			<Row className="mb-4">
+				<Col md={12} lg={6}>
 					<Carousel interval={null} variant={"dark"}>
 						{data.images.map((img: string, index: number) => (
 							<Carousel.Item key={index}>
-								<Image src={img} alt={`${data.title}`} thumbnail />
+								<Image
+									src={img}
+									alt={`${data.title}`}
+									className="detailCardImage"
+								/>
 							</Carousel.Item>
 						))}
 					</Carousel>
 				</Col>
-				<Col md={6}>
-					<Card>
+				<Col md={12} lg={6}>
+					<Card className="detailCard">
 						<Card.Body>
-							<div className="d-flex align-items-center">
-								<Card.Title>{data.title}</Card.Title>
+							<div className="d-flex flex-column align-items-center mb-3">
+								<Card.Title className="detailCardTitle">
+									{data.title}
+								</Card.Title>
+								<Container className="detailCardText">
+									<Card.Text>{data.description}</Card.Text>
+								</Container>
 								<Button
 									onClick={handleAddToCart}
 									variant="success"
-									className="ms-auto"
+									className="ms-auto detailCardButton"
 								>
 									Add to cart
 								</Button>
 							</div>
-							<Card.Text>{data.description}</Card.Text>
-							<ListGroup variant="flush">
-								<ListGroup.Item>Price: ${data.price}</ListGroup.Item>
-								<ListGroup.Item>
+							<ListGroup>
+								<ListGroup.Item className="detailCardListItem">
+									Price: ${data.price}
+								</ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
 									Category:{" "}
 									<Link to={`/category/${data.category}`}>{data.category}</Link>
 								</ListGroup.Item>
-								<ListGroup.Item>Brand: {data.brand}</ListGroup.Item>
-								<ListGroup.Item>Stock: {data.stock}</ListGroup.Item>
-								<ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
+									Brand: {data.brand}
+								</ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
+									Stock: {data.stock}
+								</ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
 									Dimensions: {data.dimensions.width} x {data.dimensions.height}{" "}
 									x {data.dimensions.depth} cm
 								</ListGroup.Item>
-								<ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
 									Warranty: {data.warrantyInformation}
 								</ListGroup.Item>
-								<ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
 									Shipping: {data.shippingInformation}
 								</ListGroup.Item>
-								<ListGroup.Item>
+								<ListGroup.Item className="detailCardListItem">
 									Return Policy: {data.returnPolicy}
 								</ListGroup.Item>
 							</ListGroup>
@@ -83,12 +98,18 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 				<Col>
 					<h1 className="h3">Reviews</h1>
 					{data.reviews.map((review: Review, index: number) => (
-						<Card className="mb-3" key={index}>
+						<Card className="mb-3 detailCardReview" key={index}>
 							<Card.Body>
-								<Card.Title>{review.reviewerName}</Card.Title>
-								<Card.Text>{review.comment}</Card.Text>
-								<Card.Subtitle>Rating: {review.rating}/5⭐</Card.Subtitle>
-								<Card.Footer className="px-0 pb-0">
+								<Card.Title className="detailCardReviewTitle">
+									{review.reviewerName}
+								</Card.Title>
+								<Card.Text className="detailCardReviewText">
+									{review.comment}
+								</Card.Text>
+								<Card.Subtitle className="detailCardReviewSub">
+									Rating: {review.rating}/5⭐
+								</Card.Subtitle>
+								<Card.Footer className="px-0 pb-0 detailCardReviewFooter">
 									Posted: {new Date(review.date).toLocaleDateString()}
 								</Card.Footer>
 							</Card.Body>
@@ -96,7 +117,7 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 					))}
 				</Col>
 			</Row>
-		</div>
+		</>
 	);
 };
 
