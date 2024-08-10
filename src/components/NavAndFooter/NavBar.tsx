@@ -88,7 +88,7 @@ const NavBar = () => {
 								<Button
 									onClick={handleCartToggle}
 									disabled={cart.length <= 0}
-									variant="success"
+									className="cartCheckoutButton"
 								>
 									Checkout
 								</Button>
