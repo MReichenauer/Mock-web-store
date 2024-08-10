@@ -7,11 +7,12 @@ import OverviewCard from "../components/cards/OverviewCard";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import SortProducts from "../components/utils/SortProducts";
+import useScrollToTop from "../hooks/utils/useScrollToTop";
 
 const HomePage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const page = Number(searchParams.get("page") || 1);
-	const limit = 8;
+	const limit = 18;
 	const skip = (page - 1) * limit;
 	const [sortBy, setSortBy] = useState("id");
 	const [order, setOrder] = useState("asc");
@@ -23,6 +24,8 @@ const HomePage = () => {
 		isSuccess: productsIsSuccess,
 		isLoading: productsIsLoading,
 	} = useAllProducts(limit, skip, sortBy, order);
+
+	useScrollToTop(page);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ page: String(newPage) });

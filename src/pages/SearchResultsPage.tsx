@@ -1,18 +1,19 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OverviewCard from "../components/cards/OverviewCard";
 import Pagination from "../components/utils/Pagination";
 import { useProductsBySearch } from "../hooks/useProductsBySearch";
 import { ProductOverview } from "../services/Types";
 import SortProducts from "../components/utils/SortProducts";
+import useScrollToTop from "../hooks/utils/useScrollToTop";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const searchQuery = searchParams.get("query") || "";
 	const page = Number(searchParams.get("page") || 0);
-	const limit = 8;
+	const limit = 18;
 	const skip = (page - 1) * limit;
 	const [sortBy, setSortBy] = useState("id");
 	const [order, setOrder] = useState("asc");
@@ -34,16 +35,7 @@ const SearchResultsPage = () => {
 		setOrder(sortOrder);
 	};
 
-	useEffect(() => {
-		setTimeout(() => {
-			window.scroll({
-				top: 0,
-				left: 0,
-				behavior: "smooth",
-			});
-		}, 0);
-		console.log("New page");
-	}, [page]);
+	useScrollToTop(page);
 
 	if (isLoading) return <p>Loading...</p>;
 	if (isError) return <p>Error getting data...</p>;
