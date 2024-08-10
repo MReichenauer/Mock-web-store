@@ -10,22 +10,17 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import useAllCategories from "../../hooks/useAllCategories";
+import cartIcon from "../../assets/img/svg/cartIcon.svg";
 
 const NavBar = () => {
-	const {
-		data: allCategories,
-		isError: isErrorCategories,
-		error: errorCategories,
-		isSuccess: isSuccessCategories,
-	} = useAllCategories();
+	const { data, isError, error, isSuccess } = useAllCategories();
 
 	const { cart, totalPrice } = useCart();
 
 	const [expanded, setExpanded] = useState(false);
 	const [showCart, SetShowCart] = useState(false);
 
-	if (isErrorCategories)
-		return <p>Error getting categories: {errorCategories.message}</p>;
+	if (isError) return <p>Error getting categories: {error.message}</p>;
 
 	const handleToggle = () => {
 		setExpanded(!expanded);
@@ -37,64 +32,78 @@ const NavBar = () => {
 
 	return (
 		<>
-			{isSuccessCategories && (
+			{isSuccess && (
 				<>
-					<Navbar expand="lg" expanded={expanded}>
+					<Navbar expand="lg" expanded={expanded} className="navbarFull">
 						<Container>
-							<Navbar.Brand as={NavLink} to="/">
+							<Navbar.Brand as={NavLink} to="/" className="navbarBrand">
 								Mock Store
 							</Navbar.Brand>
-
+							<Nav className="navbarRight">
+								<Button
+									variant="outline-success"
+									onClick={handleCartToggle}
+									className="cartButton"
+								>
+									<img src={cartIcon} alt="Cart" width="22" height="22"></img>
+									<span className="cartCount">{cart.length}</span>
+								</Button>
+							</Nav>
 							<Navbar.Toggle
-								className="me-auto"
+								className="navbarToggle"
 								aria-controls="basic-navbar-nav"
 								onClick={handleToggle}
 							/>
 
-							<Navbar.Collapse>
-								<Nav className="me-auto">
+							<Navbar.Collapse className="justify-content-between">
+								<Nav className="navbarLeft">
 									<Nav.Link as={NavLink} to="/" onClick={handleToggle}>
 										Home
 									</Nav.Link>
 									<NavDropdown title="Categories">
-										{allCategories.map((category, index) => (
-											<NavDropdown.Item
-												as={NavLink}
-												key={index}
-												to={`/category/${category}`}
-												onClick={handleToggle}
-											>
-												{category}
-											</NavDropdown.Item>
-										))}
+										<div className="dropdownItemsContainer" role="menu">
+											{data.map((category, index) => (
+												<NavDropdown.Item
+													as={NavLink}
+													key={index}
+													to={`/category/${category}`}
+													onClick={handleToggle}
+													className="dropdownItem"
+												>
+													{category}
+												</NavDropdown.Item>
+											))}
+										</div>
 									</NavDropdown>
 								</Nav>
 							</Navbar.Collapse>
-							<Button variant="outline-success" onClick={handleCartToggle}>
-								Cart
-							</Button>
 						</Container>
+
+						<Offcanvas
+							show={showCart}
+							onHide={handleCartToggle}
+							placement="end"
+						>
+							<Offcanvas.Header className="pb-0" closeButton>
+								<Offcanvas.Title>Cart</Offcanvas.Title>
+							</Offcanvas.Header>
+							<Offcanvas.Body className="pb-0">
+								<Cart />
+							</Offcanvas.Body>
+							<div className="cartFooter">
+								<h5 className="mt-1">Total: ${totalPrice()}</h5>
+								<Link to={"/checkout"}>
+									<Button
+										onClick={handleCartToggle}
+										disabled={cart.length <= 0}
+										className="cartCheckoutButton"
+									>
+										Checkout
+									</Button>
+								</Link>
+							</div>
+						</Offcanvas>
 					</Navbar>
-					<Offcanvas show={showCart} onHide={handleCartToggle} placement="end">
-						<Offcanvas.Header className="pb-0" closeButton>
-							<Offcanvas.Title>Cart</Offcanvas.Title>
-						</Offcanvas.Header>
-						<Offcanvas.Body className="pb-0">
-							<Cart />
-						</Offcanvas.Body>
-						<div className="cartFooter">
-							<h5 className="mt-1">Total: ${totalPrice()}</h5>
-							<Link to={"/checkout"}>
-								<Button
-									onClick={handleCartToggle}
-									disabled={cart.length <= 0}
-									className="cartCheckoutButton"
-								>
-									Checkout
-								</Button>
-							</Link>
-						</div>
-					</Offcanvas>
 				</>
 			)}
 		</>
