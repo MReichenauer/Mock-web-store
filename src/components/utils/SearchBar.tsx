@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import searchIcon from "../../assets/img/svg/searchIcon.svg";
 
 const SearchBar = () => {
 	const navigate = useNavigate();
@@ -19,16 +20,17 @@ const SearchBar = () => {
 	return (
 		<div className="searchContainer">
 			<Form onSubmit={handleSearch}>
-				<InputGroup className="mb-3 mt-2">
+				<InputGroup className="searchForm mb-3 mt-2">
 					<Form.Control
+						className="searchFormInput"
 						placeholder="Search"
 						aria-label="Default"
 						aria-describedby="inputGroup-sizing-xl"
 						value={inputQuery}
 						onChange={(e) => setInputQuery(e.target.value)}
 					/>
-					<Button variant="primary" type="submit">
-						Search
+					<Button className="searchButton" type="submit">
+						<img src={searchIcon} alt="Search" width="22" height="22"></img>
 					</Button>
 				</InputGroup>
 			</Form>

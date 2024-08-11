@@ -25,6 +25,7 @@
 			font-size: 1rem;
 			color: #333;
 			margin-right: 1rem;
+            margin-top: 0.2rem;
 			transition: color 0.3s ease;
 
 			&:hover {
@@ -32,10 +33,21 @@
 			}
 		}
 
+        .dropdown-menu {
+            margin-top: -0.8rem;
+            background-color: transparent;
+            border: none;
+            position: absolute;  
+        }
+
         .dropdownItemsContainer {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: absolute;
             max-height: 16rem;  
             overflow-y: scroll;
-
+            z-index: 2;
+            
             &::-webkit-scrollbar {
                 width: 8px;
             }
@@ -93,14 +105,28 @@
         }
 	}
 
+    .searchBarContainer {
+       margin-right: auto;
+       margin-left: auto;
+       margin-bottom: -0.8rem;
+       padding-right: 3.5rem; 
+     }
+
     @media (max-width: 991px) {
 
         .navbarRight {
 			position: absolute; 
 			right: 13.5rem; 
-            top: 1.4rem;
-			 
+            top: 1.4rem; 
 		}
+
+        .searchBarContainer {
+            order: -1;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: -0.8rem;
+            padding-right: 0;
+          }
     }
 
     @media (max-width: 920px) {
@@ -175,6 +201,10 @@
 		.navbarToggler {
 			margin-right: auto;
 		}
+
+        .searchBarContainer {
+           margin-left: 0;
+          }
 	}
 }
 

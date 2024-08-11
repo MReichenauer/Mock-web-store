@@ -11,6 +11,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import useAllCategories from "../../hooks/useAllCategories";
 import cartIcon from "../../assets/img/svg/cartIcon.svg";
+import SearchBar from "../utils/SearchBar";
 
 const NavBar = () => {
 	const { data, isError, error, isSuccess } = useAllCategories();
@@ -57,9 +58,6 @@ const NavBar = () => {
 
 							<Navbar.Collapse className="justify-content-between">
 								<Nav className="navbarLeft">
-									<Nav.Link as={NavLink} to="/" onClick={handleToggle}>
-										Home
-									</Nav.Link>
 									<NavDropdown title="Categories">
 										<div className="dropdownItemsContainer" role="menu">
 											{data.map((category, index) => (
@@ -75,6 +73,9 @@ const NavBar = () => {
 											))}
 										</div>
 									</NavDropdown>
+									<div className="searchBarContainer">
+										<SearchBar />
+									</div>
 								</Nav>
 							</Navbar.Collapse>
 						</Container>
