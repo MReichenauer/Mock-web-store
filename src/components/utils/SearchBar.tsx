@@ -20,7 +20,7 @@ const SearchBar = () => {
 	return (
 		<div className="searchContainer">
 			<Form onSubmit={handleSearch}>
-				<InputGroup className="searchForm mb-3 mt-2">
+				<InputGroup className="searchForm mb-3 mt-2 prova">
 					<Form.Control
 						className="searchFormInput"
 						placeholder="Search"
