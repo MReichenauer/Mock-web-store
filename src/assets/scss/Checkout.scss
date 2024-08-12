@@ -1,7 +1,7 @@
 .checkoutCart {
     padding: 1.2rem;
     border-radius: 12px;
-    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.2);
     max-height: 70vh;
     overflow-y: auto;
 
@@ -12,11 +12,215 @@
     }
 }
 
+.toPaymentButton {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 0.8rem;
+    border-radius: 20px;
+    background-color: #30a74c;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #34b452; 
+    }
+}
+
 .checkoutCartItem {
     padding-bottom: 1rem;
     border-bottom: 1px solid #d1d1d1;
 }
+    .cartButtons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center; 
+    }
 
-.toPaymentButton {
-    max-height: 3rem;
+    .quantityButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.5rem;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    
+        img {
+            width: 1.4rem; 
+            height: 1.4rem;
+        }
+    
+        &:disabled {
+            opacity: 0.6;
+        }
+    }
+
+    .quantityButtonIncrease{
+        margin-left: 0.3rem;
+        &:hover {
+            background-color: #34b4525b;
+        }
+    }
+
+    .quantityButtonDecrease{
+        margin-right: 0.3rem;
+        &:hover {
+            background-color: #af031456;
+        }
+    }
+
+    .itemInformation {
+        margin-left: 0rem;
+    }
+
+    .price {
+        margin-left: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    .quantityText, .price {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .emptyCartMessage {
+        font-size: 1.25rem;
+        color: #555;
+        text-align: center;
+        padding: 2rem;
+    }
+
+
+.removeButton {
+	max-height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: -4rem;
+    border-radius: 50%; 
+    padding: 0.8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s ease;
+    img {
+        width: 1.4rem; 
+        height: 1.4rem;
+    }
+    
+    &:hover {
+        background-color: #af0315bd; 
+    }
+}
+
+.itemTitle {
+    font-size: 1.2rem;
+}
+
+.reviewProductsTitle{
+    font-size: 1.6rem;
+}
+
+@media (max-width: 576px) {
+    .checkoutCart {
+        padding: 0.8rem;
+    }
+
+    .checkoutCartItem {
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .toPaymentButton {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .removeButton {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+    }
+
+    
+
+    .quantityButton {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.3rem;
+
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+
+    .emptyCartMessage {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 1399px) {
+    .itemInformation {
+        margin-left: 0.8rem;
+    }
+}
+
+@media (max-width: 1198px) {
+    .itemInformation {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .itemInformation {
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .reviewProductsTitle{
+        font-size: 1.4rem;
+    }
+    .itemInformation {
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .itemInformation {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .itemInformation {
+        margin-left: 2.5rem;
+    }
+}
+
+@media (max-width: 340px) {
+
+    .reviewProductsTitle{
+        font-size: 1.2rem;
+    }
+    .itemInformation {
+        margin-left: 2rem;
+    }
+
+    .checkoutCartItem {
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    .itemTitle {
+        font-size: 1rem;
+    }
 }

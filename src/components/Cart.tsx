@@ -37,6 +37,7 @@ const Cart = () => {
 										className="removeButton  mb-5"
 										size="sm"
 										onClick={() => removeFromCart(item.id)}
+										aria-label="remove item"
 									>
 										<img
 											src={trashCanIcon}
@@ -54,9 +55,9 @@ const Cart = () => {
 							<div className="d-flex justify-content-around align-items-center">
 								<Button
 									className="quantityButton quantityButtonDecrease"
-									variant="outline-secondary"
 									onClick={() => decreaseQuantity(item.id)}
 									disabled={item.quantity <= 1}
+									aria-label="decrease quantity"
 								>
 									<img
 										src={minusCircle}
@@ -70,9 +71,9 @@ const Cart = () => {
 								</Card.Text>
 								<Button
 									className="quantityButton quantityButtonIncrease"
-									variant="outline-secondary"
 									onClick={() => increaseQuantity(item.id)}
 									disabled={item.stock === item.quantity}
+									aria-label="increase quantity"
 								>
 									<img
 										src={plusCircle}
