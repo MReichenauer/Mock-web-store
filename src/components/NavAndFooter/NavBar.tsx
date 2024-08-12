@@ -86,7 +86,9 @@ const NavBar = () => {
 							placement="end"
 						>
 							<Offcanvas.Header className="pb-0" closeButton>
-								<Offcanvas.Title>Cart</Offcanvas.Title>
+								<Offcanvas.Title>
+									<img src={cartIcon} alt="Cart" width="26" height="26"></img>
+								</Offcanvas.Title>
 							</Offcanvas.Header>
 							<Offcanvas.Body className="pb-0">
 								<Cart />
