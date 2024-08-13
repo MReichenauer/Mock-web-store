@@ -32,9 +32,9 @@ const Cart = () => {
 										<div className="ms-1">{item.title}</div>
 									</Link>
 								</div>
-								<div className="ms-auto">
+								<div className="ms-auto mt-4">
 									<Button
-										className="removeButton  mb-5"
+										className="removeButton "
 										size="sm"
 										onClick={() => removeFromCart(item.id)}
 										aria-label="remove item"

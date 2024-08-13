@@ -1,0 +1,87 @@
+.cardPaymentContainer {
+    padding-top: 0.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.55rem;
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.3rem;
+}
+
+.buttonContainer button {
+    border-radius: 20px;
+    margin: 1rem;
+    margin-top: 0;
+}
+
+.prevStepButton {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #a50415bd;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color:  #ca091dbd; 
+    }
+
+}
+
+.confirmOrderButton {
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #30a74c;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #34b452; 
+    }
+}
+
+@media (max-width: 480px) {
+    .prevStepButton {
+        font-size: 0.9rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    
+    }
+    
+    .confirmOrderButton {
+        font-size: 0.9rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .buttonContainer {
+        flex-direction: column-reverse;
+    }
+
+    .buttonContainer button{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttonContainer a {
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}

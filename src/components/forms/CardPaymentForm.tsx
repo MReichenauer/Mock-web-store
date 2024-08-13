@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputFieldForm from "./InputFieldForm";
 import Row from "react-bootstrap/Row";
+import "../../assets/scss/CardPaymentForm.scss";
 
 const schema = cardPaymentSchema;
 
@@ -77,8 +78,8 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 	};
 
 	return (
-		<Form onSubmit={handleFormSubmit}>
-			<div className="card p-3">
+		<Form className="cardPaymentContainer" onSubmit={handleFormSubmit}>
+			<div className="p-3">
 				<h6 className="text-uppercase ms-1">Your Information</h6>
 				<Row>
 					<Col md={6}>
@@ -230,11 +231,15 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 					</Col>
 				</Row>
 			</div>
-			<div className="mt-4 mb-4 d-flex justify-content-between">
+			<div className="buttonContainer">
 				<Link to={"/checkout"}>
-					<Button variant="secondary">Previous step</Button>
+					<Button className="prevStepButton">Previous step</Button>
 				</Link>
-				<Button type="submit" variant="success" disabled={cart.length === 0}>
+				<Button
+					type="submit"
+					className="confirmOrderButton"
+					disabled={cart.length === 0}
+				>
 					Confirm order for ${totalAmount}
 				</Button>
 			</div>

@@ -29,6 +29,7 @@ const InputFieldForm = ({
 			value={value}
 			onChange={onChange}
 			required
+			className="inputField"
 		/>
 		{error && <p className="error">{error}</p>}
 	</Form.Group>

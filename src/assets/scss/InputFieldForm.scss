@@ -1,3 +1,14 @@
 .error {
     color: rgb(247, 10, 10);
 }
+
+.inputField {
+    border-radius: 0.55rem;
+    border: 1px solid #f8efef; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:focus {
+        border-color: #f1ecec;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); 
+    }
+}

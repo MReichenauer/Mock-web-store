@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputFieldForm from "./InputFieldForm";
 import Row from "react-bootstrap/Row";
+import "../../assets/scss/InvoicePaymentForm.scss";
 
 const schema = invoicePaymentSchema;
 
@@ -74,8 +75,8 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 	};
 
 	return (
-		<Form onSubmit={handleFormSubmit}>
-			<div className="card p-3">
+		<Form className="invoicePaymentContainer" onSubmit={handleFormSubmit}>
+			<div className="p-3">
 				<h6 className="text-uppercase ms-1">Your Information</h6>
 				<p className="ms-1">
 					The Invoice will be sent to the shipping address.
@@ -195,11 +196,15 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 					</Col>
 				</Row>
 			</div>
-			<div className="mt-4 mb-4 d-flex justify-content-between">
-				<Link to={"/checkout"}>
-					<Button variant="secondary">Previous step</Button>
+			<div className="buttonContainer">
+				<Link className="prevLinkTag" to={"/checkout"}>
+					<Button className="prevStepButton">Previous step</Button>
 				</Link>
-				<Button type="submit" variant="success" disabled={cart.length === 0}>
+				<Button
+					type="submit"
+					className="confirmOrderButton"
+					disabled={cart.length === 0}
+				>
 					Confirm order for ${totalAmount}
 				</Button>
 			</div>
