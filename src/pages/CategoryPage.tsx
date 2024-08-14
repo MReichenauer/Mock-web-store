@@ -3,11 +3,11 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { ProductOverview } from "../services/Types";
 import Container from "react-bootstrap/Container";
 import OverviewCard from "../components/cards/OverviewCard";
-import Pagination from "../components/utils/Pagination";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
+import PaginationComponent from "../components/utils/PaginationComponent";
 
 const CategoryPage = () => {
 	const { category } = useParams();
@@ -18,9 +18,7 @@ const CategoryPage = () => {
 	const [sortBy, setSortBy] = useState("id");
 	const [order, setOrder] = useState("asc");
 
-	if (!category) {
-		return;
-	}
+	useScrollToTop(page);
 
 	const {
 		data: categoryData,
@@ -28,9 +26,7 @@ const CategoryPage = () => {
 		error: categoryError,
 		isSuccess: categoryIsSuccess,
 		isLoading: categoryIsLoading,
-	} = useSingleCategory(limit, skip, category, sortBy, order);
-
-	useScrollToTop(page);
+	} = useSingleCategory(limit, skip, category || "", sortBy, order);
 
 	const handlePageChange = (newPage: number) => {
 		setSearchParams({ page: String(newPage) });
@@ -80,7 +76,8 @@ const CategoryPage = () => {
 						/>
 					))}
 			</Row>
-			<Pagination
+
+			<PaginationComponent
 				currentPage={page}
 				totalPages={totalPages}
 				onPageChange={handlePageChange}

@@ -3,11 +3,11 @@ import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OverviewCard from "../components/cards/OverviewCard";
-import Pagination from "../components/utils/Pagination";
 import { useProductsBySearch } from "../hooks/useProductsBySearch";
 import { ProductOverview } from "../services/Types";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
+import PaginationComponent from "../components/utils/PaginationComponent";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -67,7 +67,7 @@ const SearchResultsPage = () => {
 			</Row>
 
 			{totalPages > 1 && (
-				<Pagination
+				<PaginationComponent
 					currentPage={page}
 					totalPages={totalPages}
 					onPageChange={handlePageChange}

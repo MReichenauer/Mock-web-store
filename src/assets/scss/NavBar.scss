@@ -254,4 +254,8 @@
   &:hover {
     background-color: #34b452; 
   }
+
+  &:disabled {
+    background-color: #30a74c;
+  }
 }

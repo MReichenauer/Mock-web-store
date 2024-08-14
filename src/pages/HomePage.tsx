@@ -2,12 +2,12 @@ import { useSearchParams } from "react-router-dom";
 import { useAllProducts } from "../hooks/useAllProducts";
 import { ProductOverview } from "../services/Types";
 import Container from "react-bootstrap/Container";
-import Pagination from "../components/utils/Pagination";
 import OverviewCard from "../components/cards/OverviewCard";
 import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
+import PaginationComponent from "../components/utils/PaginationComponent";
 
 const HomePage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -74,7 +74,7 @@ const HomePage = () => {
 						/>
 					))}
 			</Row>
-			<Pagination
+			<PaginationComponent
 				currentPage={page}
 				totalPages={totalPages}
 				onPageChange={handlePageChange}
