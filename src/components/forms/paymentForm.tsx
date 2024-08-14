@@ -5,6 +5,8 @@ import { useCart } from "../../context/CartContext";
 import Form from "react-bootstrap/Form";
 import InvoicePaymentForm from "./InvoicePaymentForm";
 import Receipt from "../Receipt";
+import creditCardIcon from "../../assets/img/svg/creditCardIcon.svg";
+import invoiceIcon from "../../assets/img/svg/invoiceIcon.svg";
 
 const PaymentForm = () => {
 	const { cart, clearCart, totalPrice } = useCart();
@@ -55,7 +57,22 @@ const PaymentForm = () => {
 						<Form.Check
 							className="me-4"
 							type="radio"
-							label="Card"
+							id="cardPayment"
+							alt="Credit card payment"
+							label={
+								<label
+									htmlFor="cardPayment"
+									className="d-flex align-items-center"
+								>
+									<span className="me-2">Card</span>
+									<img
+										src={creditCardIcon}
+										alt="Credit card"
+										width="24"
+										height="24"
+									/>
+								</label>
+							}
 							name="paymentMethod"
 							value="card"
 							checked={paymentMethod === "card"}
@@ -63,12 +80,22 @@ const PaymentForm = () => {
 						/>
 						<Form.Check
 							type="radio"
-							label="Invoice"
+							id="invoicePayment"
+							label={
+								<label
+									htmlFor="invoicePayment"
+									className="d-flex align-items-center"
+								>
+									<span className="me-2">Invoice</span>
+									<img src={invoiceIcon} alt="Invoice" width="24" height="24" />
+								</label>
+							}
 							name="paymentMethod"
 							value="invoice"
 							checked={paymentMethod === "invoice"}
 							onChange={handlePaymentMethodChange}
-						/>
+							alt="Invoice Payment"
+						></Form.Check>
 					</Form.Group>
 
 					{paymentMethod === "card" ? (
