@@ -1,0 +1,26 @@
+.orderSummaryContainer {
+    padding-top: 0.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.55rem;
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.productList{
+    border-radius: 0.55rem;
+    border-style: none;
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.productTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.productText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #353434; 
+}

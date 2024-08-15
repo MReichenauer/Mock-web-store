@@ -22,13 +22,17 @@ const PaymentPage = () => {
 			<Row>
 				<PaymentForm />
 				{cart.length !== 0 && (
-					<Button variant="primary" onClick={toggleOrderSummary}>
-						{showOrderSummary ? "Hide order summary" : "Show order summary"}
-					</Button>
+					<Container className="d-flex justify-content-center mt-3 mb-2">
+						<Button variant="primary" onClick={toggleOrderSummary}>
+							{showOrderSummary ? "Hide order summary" : "Show order summary"}
+						</Button>
+					</Container>
 				)}
 
 				{cart.length !== 0 && showOrderSummary && (
-					<OrderSummary cart={cart} total={total} shipping={shipping} />
+					<Container>
+						<OrderSummary cart={cart} total={total} shipping={shipping} />
+					</Container>
 				)}
 			</Row>
 		</Container>
