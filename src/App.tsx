@@ -6,8 +6,8 @@ import CategoryPage from "./pages/CategoryPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import PaymentPage from "./pages/PaymentPage";
-import SearchBar from "./components/utils/SearchBar";
 import SearchResultsPage from "./pages/SearchResultsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
 	return (
@@ -15,6 +15,8 @@ function App() {
 			<NavBar />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
+				<Route path="*" element={<NotFoundPage />} />
+
 				<Route path="/category/:category" element={<CategoryPage />} />
 				<Route path="/product/:id" element={<ProductDetailsPage />} />
 				<Route path="/checkout" element={<CheckoutPage />} />
