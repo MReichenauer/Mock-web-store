@@ -20,16 +20,21 @@ const Receipt = ({
 	expiration,
 }: ReceiptProps) => {
 	return (
-		<Container className="receiptContainer z-2">
+		<Container className="receiptContainer">
 			<div>
-				<h3>Your payment was successful!</h3>
+				<h3 className="receiptTitle">Order Confirmation</h3>
 			</div>
+
 			<div className="orderDetails">
-				<h4>Order details</h4>
-				<p>Order will be sent within 1-2 workdays</p>
+				<h4>Details</h4>
+				<p>Your Order will be sent within 1-2 workdays</p>
+				<p>Total cost of your order is: ${totalOrderPrice}</p>
 				<p>Total cost of products: ${totalOrderPrice}</p>
 				<p>Shipping: {totalOrderPrice <= 100 ? "$12" : "Free"}</p>
-				<h4>Your information</h4>
+			</div>
+
+			<div className="customerInfo">
+				<h4>Customer Information</h4>
 				<ul>
 					<li>
 						Name: {personInfo.firstName} {personInfo.lastName}
@@ -42,26 +47,33 @@ const Receipt = ({
 					<li>Street name: {personInfo.streetName}</li>
 					<li>Street number: {personInfo.streetNumber}</li>
 					<li>Zip code: {personInfo.zipCode}</li>
-					{cardNumber && (
-						<div>
-							<h5>Card Details</h5>
+				</ul>
+
+				{cardNumber && (
+					<div className="cardInfo">
+						<ul>
+							<h4>Card Details</h4>
 							<li>Card number: {cardNumber}</li>
 							<li>CVV: {cvv}</li>
 							<li>Expiration: {expiration}</li>
-						</div>
-					)}
-				</ul>
+						</ul>
+					</div>
+				)}
 			</div>
-			<div>
-				<h4>Products</h4>
+			<div className="productSummary">
+				<h4>Products Ordered</h4>
 				{products.map((item) => (
 					<ListGroup key={item.id}>
-						<ListGroupItem>
-							<div className="d-flex">
-								<Image className="cartThumbnail" src={item.thumbnail} />
-								<div className="d-flex flex-column ">
-									<p className="mb-1 mt-1">{item.title}</p>
-									<p className="mb-1">Quantity: {item.quantity}</p>
+						<ListGroupItem className="productList">
+							<div className="productItem">
+								<Image
+									className="cartThumbnail"
+									src={item.thumbnail}
+									alt={item.title}
+								/>
+								<div>
+									<p className="productTitle">{item.title}</p>
+									<p className="">Quantity: {item.quantity}</p>
 									<p>Price per unit: ${item.price}</p>
 								</div>
 							</div>

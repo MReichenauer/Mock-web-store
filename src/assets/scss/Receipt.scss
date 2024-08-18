@@ -7,16 +7,88 @@
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.cartThumbnail {
-	display: flex;
-	align-self: center;
-	justify-self: center;
-	width: 80px;
-	height: 80px;
-	margin-right: 1.2rem;
+.receiptTitle {
+    font-size: 1.8rem;
+	font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
-.orderDetails ul {
-	list-style-type: none;
-	padding: 0;
+.orderDetails,
+.customerInfo,
+.cardInfo,
+.productSummary {
+    margin-bottom: 1rem;
+}
+
+.orderDetails h4,
+.customerInfo h4,
+.cardInfo h4,
+.productSummary h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #30a74c;
+}
+
+.orderDetails p,
+.customerInfo ul li,
+.cardInfo ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.customerInfo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.productList {
+    border-radius: 0.55rem;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.productItem {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+}
+
+.cartThumbnail {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.productTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+@media (max-width: 576px) {
+    .receiptContainer {
+        padding: 1rem;
+    }
+
+    .receiptTitle {
+        font-size: 1.5rem;
+    }
+
+    .orderDetails h4,
+    .customerInfo h4,
+    .cardInfo h4,
+    .productSummary h4 {
+        font-size: 1.3rem;
+    }
+
+    .cartThumbnail {
+        width: 60px;
+        height: 60px;
+    }
 }
