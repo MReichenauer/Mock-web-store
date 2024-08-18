@@ -14,16 +14,17 @@ const OrderSummary = ({ cart, total, shipping }: OrderSummaryProps) => {
 	const totalWithShipping = total + shipping;
 	return (
 		<Container className="orderSummaryContainer mt-4 p-3">
-			<h2>Order summary</h2>
+			<h2 className="orderSummaryTitle">Order summary</h2>
 
 			{total > 100 ? (
-				<div>
-					<h2>Total cost: ${total}</h2>
-					<span>Free shipping</span>
+				<div className="orderSummaryTotal">
+					<h3>Total cost: ${total}</h3>
+					<p className="mb-0">Products: ${total}</p>
+					<p>Free shipping</p>
 				</div>
 			) : (
-				<div>
-					<h3 className="mb-2">Total cost: ${totalWithShipping.toFixed(2)}</h3>
+				<div className="orderSummaryTotal">
+					<h3>Total cost: ${totalWithShipping.toFixed(2)}</h3>
 					<p className="mb-0">Products: ${total}</p>
 					<p>Shipping: ${shipping}</p>
 				</div>

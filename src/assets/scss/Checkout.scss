@@ -29,70 +29,74 @@
 }
 
 .checkoutCartItem {
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-bottom: 1px solid #d1d1d1;
+    border-radius: 0.55rem;
+    border-style: none;
+    box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
-    .cartButtons {
-        display: flex;
-        justify-content: space-around;
-        align-items: center; 
+.cartButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.quantityButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+
+    img {
+        width: 1.4rem; 
+        height: 1.4rem;
     }
 
-    .quantityButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        border-radius: 50%;
-        width: 2.5rem;
-        height: 2.5rem;
-        padding: 0.5rem;
-        background-color: transparent;
-        transition: background-color 0.3s ease;
-    
-        img {
-            width: 1.4rem; 
-            height: 1.4rem;
-        }
-    
-        &:disabled {
-            opacity: 0.6;
-        }
+    &:disabled {
+        opacity: 0.6;
     }
+}
 
-    .quantityButtonIncrease{
-        margin-left: 0.3rem;
-        &:hover {
-            background-color: #34b4525b;
-        }
+.quantityButtonIncrease{
+    margin-left: 0.3rem;
+    &:hover {
+        background-color: #34b4525b;
     }
+}
 
-    .quantityButtonDecrease{
-        margin-right: 0.3rem;
-        &:hover {
-            background-color: #af031456;
-        }
+.quantityButtonDecrease{
+    margin-right: 0.3rem;
+    &:hover {
+        background-color: #af031456;
     }
+}
 
-    .itemInformation {
-        margin-left: 0rem;
-    }
+.itemInformation {
+    margin-left: 0rem;
+}
 
-    .price {
-        margin-left: 0.6rem;
-        margin-bottom: 0.4rem;
-    }
-    .quantityText, .price {
-        font-size: 1rem;
-        color: #333;
-    }
+.price {
+    margin-left: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+.quantityText, .price {
+    font-size: 1rem;
+    color: #333;
+}
 
-    .emptyCartMessage {
-        font-size: 1.25rem;
-        color: #555;
-        text-align: center;
-        padding: 2rem;
-    }
+.emptyCartMessage {
+    font-size: 1.25rem;
+    color: #555;
+    text-align: center;
+    padding: 2rem;
+}
 
 
 .removeButton {

@@ -6,11 +6,26 @@
     box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.2);
 }
 
+.orderSummaryTitle {
+    font-size: 2rem;
+    color: #333;
+}
+
+.orderSummaryTotal h3 {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.orderSummaryTotal p {
+    font-size: 1rem;
+    color: #353434; 
+}
 .productList{
     border-radius: 0.55rem;
     border-style: none;
     box-shadow: -2px 8px 20px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .productTitle {
