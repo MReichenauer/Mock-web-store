@@ -9,8 +9,6 @@
 
     &:hover  {
         background-color: #f3f3f3;
-        color: #333;
-        border: 1px solid #f8efef;
     }
 }
 
@@ -20,4 +18,21 @@
     color: #333;
     border: 1px solid #f8efef;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resetButton{
+    font-size: 1rem;
+    color: #333;
+    background-color: #faf9f9;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #f8efef; 
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+
+    &:hover  {
+        background-color: #f3f3f3;
+        color: #333;
+        border: 1px solid #f8efef; 
+    }
 }
