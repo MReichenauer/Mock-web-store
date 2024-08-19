@@ -8,6 +8,7 @@ import { useState } from "react";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
+import Loading from "../components/utils/Loading";
 
 const CategoryPage = () => {
 	const { category } = useParams();
@@ -38,7 +39,7 @@ const CategoryPage = () => {
 	};
 
 	if (categoryIsLoading) {
-		return <p>Loading...</p>;
+		return <Loading />;
 	}
 
 	if (categoryIsError) {

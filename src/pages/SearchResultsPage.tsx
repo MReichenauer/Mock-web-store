@@ -8,6 +8,7 @@ import { ProductOverview } from "../services/Types";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
+import Loading from "../components/utils/Loading";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -37,7 +38,7 @@ const SearchResultsPage = () => {
 
 	useScrollToTop(page);
 
-	if (isLoading) return <p>Loading...</p>;
+	if (isLoading) return <Loading />;
 	if (isError) return <p>Error getting data...</p>;
 
 	const totalPages = data ? Math.ceil(data.total / limit) : 0;

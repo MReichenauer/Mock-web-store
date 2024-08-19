@@ -3,6 +3,7 @@ import { useSingleProduct } from "../hooks/useSingleProduct";
 import Container from "react-bootstrap/Container";
 import DetailCard from "../components/cards/DetailCard";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
+import Loading from "../components/utils/Loading";
 
 const ProductDetailsPage = () => {
 	const { id } = useParams();
@@ -18,7 +19,7 @@ const ProductDetailsPage = () => {
 	useScrollToTop(id as string);
 
 	if (productIsLoading) {
-		return <p>Loading...</p>;
+		return <Loading />;
 	}
 
 	if (productIsError) {

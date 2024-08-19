@@ -8,6 +8,7 @@ import { useState } from "react";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
+import Loading from "../components/utils/Loading";
 
 const HomePage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -37,7 +38,7 @@ const HomePage = () => {
 	};
 
 	if (productsIsLoading) {
-		return <p>Loading...</p>;
+		return <Loading />;
 	}
 
 	if (productsIsError) {
