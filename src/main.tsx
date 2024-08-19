@@ -6,7 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { CartProvider } from "./context/CartContext.tsx";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			staleTime: 600000, // 10min
+		},
+	},
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
