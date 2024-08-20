@@ -82,6 +82,7 @@ const SortProducts: React.FC<SortProductsProps> = ({
 			</DropdownButton>
 
 			<Button
+				variant="none"
 				className="resetButton"
 				onClick={() => {
 					onSortChange("id", "asc");
