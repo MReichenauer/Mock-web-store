@@ -1,12 +1,13 @@
 import CardPaymentForm from "./CardPaymentForm";
 import { CardFormData, CartItem, InvoiceFormData } from "../../services/Types";
 import { useState } from "react";
-import { useCart } from "../../context/CartContext";
+
 import Form from "react-bootstrap/Form";
 import InvoicePaymentForm from "./InvoicePaymentForm";
 import Receipt from "../Receipt";
 import creditCardIcon from "../../assets/img/svg/creditCardIcon.svg";
 import invoiceIcon from "../../assets/img/svg/invoiceIcon.svg";
+import { useCart } from "../../hooks/useCart";
 
 const PaymentForm = () => {
 	const { cart, clearCart, totalPrice } = useCart();

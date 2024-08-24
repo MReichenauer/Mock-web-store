@@ -7,11 +7,12 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
-import { useCart } from "../context/CartContext";
+
 import trashCanIcon from "../assets/img/svg/trashCan.svg";
 import plusCircle from "../assets/img/svg/plusCircle.svg";
 import minusCircle from "../assets/img/svg/minusCircle.svg";
 import arrowRight from "../assets/img/svg/arrowRight.svg";
+import { useCart } from "../hooks/useCart";
 
 const CheckoutPage = () => {
 	const {

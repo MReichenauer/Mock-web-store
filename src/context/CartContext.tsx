@@ -1,5 +1,5 @@
 import { CartItem } from "../services/Types";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 type CartContextType = {
 	cart: CartItem[];
@@ -11,7 +11,9 @@ type CartContextType = {
 	clearCart: () => void;
 };
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(
+	undefined,
+);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
@@ -95,12 +97,4 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 			{children}
 		</CartContext.Provider>
 	);
-};
-
-export const useCart = () => {
-	const context = useContext(CartContext);
-	if (context === undefined) {
-		throw new Error("useCart must be used within its provider");
-	}
-	return context;
 };
