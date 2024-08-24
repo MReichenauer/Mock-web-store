@@ -30,7 +30,7 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 
 	return (
 		<>
-			<Row className="mb-4">
+			<Row className="mb-4 mt-5">
 				<Col md={12} lg={6}>
 					<Carousel interval={null} variant={"dark"}>
 						{data.images.map((img: string, index: number) => (

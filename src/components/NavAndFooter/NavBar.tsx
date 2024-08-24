@@ -86,12 +86,12 @@ const NavBar = () => {
 							onHide={handleCartToggle}
 							placement="end"
 						>
-							<Offcanvas.Header className="pb-0" closeButton>
+							<Offcanvas.Header className="pb-0 cartTitle" closeButton>
 								<Offcanvas.Title>
 									<img src={cartIcon} alt="Cart" width="26" height="26"></img>
 								</Offcanvas.Title>
 							</Offcanvas.Header>
-							<Offcanvas.Body className="pb-0">
+							<Offcanvas.Body className="pb-0 cartBody">
 								<Cart />
 							</Offcanvas.Body>
 							<div className="cartFooter">

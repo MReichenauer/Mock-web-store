@@ -1,7 +1,7 @@
 .detailCardImage {
     width: 100%;
-    max-height: 100%;
-    max-height: 550px;
+    max-height: 34rem;
+    aspect-ratio: 1/1;
     object-fit: contain;
     border-radius: 10px;
     margin-bottom: 1rem;
@@ -10,7 +10,7 @@
   .detailCard {
     border-radius: 10px;
     border: none;
-    background-color: #ffffff; 
+    background-color: #FAF9F6; 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
     margin-bottom: 1rem;
@@ -29,6 +29,7 @@
     }
   
     .detailCardListItem {
+    background-color: #FAF9F6; 
 		border: none;
 		border-bottom: solid #807c7c31 1px;
 		font-size: 1rem;
@@ -41,8 +42,8 @@
         padding-bottom: 0.5rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-     	border-radius: 20px;
-     	background-color: #30a74c;
+        border-radius: 20px;
+        background-color: #30a74c;
         color: #ffffff;
         border: none;
         transition: background-color 0.3s ease;
@@ -55,7 +56,7 @@
   .detailCardReview {
     border: none;
     border-radius: 10px;
-    background-color: #ffffff; 
+    background-color: #FAF9F6;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out;
     margin-bottom: 1rem;
@@ -86,12 +87,16 @@
   }
 
   @media (max-width: 992px) { 
-	.detailCardImage {
-		max-height: 50%;
-	}
+    .detailCardImage {
+      max-height: 28rem;
+    }
   }
   
   @media (max-width: 768px) { 
+    .detailCardImage {
+      max-height: 25rem;
+    }
+
     .detailCardTitle {
       	font-size: 1.1rem;
     }
@@ -119,6 +124,12 @@
   
     .detailCardReviewFooter {
       	font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 576px) { 
+    .detailCardImage {
+      max-height: 22rem;
     }
   }
   

@@ -49,7 +49,7 @@ const Cart = () => {
 								</div>
 							</Card.Title>
 							<Card.Text className="cartPrice mb-1">
-								Price: ${item.price}
+								Price per unit: ${item.price}
 							</Card.Text>
 
 							<div className="d-flex justify-content-around align-items-center">

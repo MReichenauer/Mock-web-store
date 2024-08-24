@@ -7,7 +7,7 @@
 	max-width: 12rem;
 	border: none;
 	border-radius: 10px;
-	background-color: #faf9f9;
+	background-color: #FAF9F6;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.2s ease-in-out;
 
@@ -22,7 +22,8 @@
 	height: 10rem;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	object-fit: cover;
+	aspect-ratio: 1/1;
+    object-fit: contain;
 }
 
 .overviewCardBody {

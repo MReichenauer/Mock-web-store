@@ -1,5 +1,5 @@
 .navbarFull {
-	background-color: #ffffff;
+	background-color: #FAF9F6;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 	padding: 1rem;
     position: relative;
@@ -41,7 +41,7 @@
         }
 
         .dropdownItemsContainer {
-            background-color: #ffffff;
+            background-color: #FAF9F6;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             position: absolute;
             max-height: 16rem;  
@@ -208,17 +208,6 @@
 	}
 }
 
-.cartFooter {
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    bottom: 0;
-    background: white;
-    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
-    padding: 0.7rem;
-    width: 100%;
-}
-
 .cartCheckoutButton {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
@@ -232,12 +221,20 @@
     }
 }
 
+.cartBody {
+    background-color: #F4F3F2;
+}
+
+.cartTitle {
+    background-color: #F4F3F2;
+}
+
 .cartFooter {
     display: flex;
     justify-content: space-between;
     position: sticky;
     bottom: 0;
-    background: white;
+    background-color: #F4F3F2;
     box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
     padding: 0.7rem;
     width: 100%;

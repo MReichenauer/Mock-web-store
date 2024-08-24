@@ -30,10 +30,10 @@
 
 .cartCard {
     border: none;
-    border-radius: 10px;
-    background-color: #f8f9fa; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    background-color: #FAF9F6; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s ease;
+    
 
     &:hover {
         transform: translateY(-5px); 
@@ -42,7 +42,9 @@
     }
 
     .cartBody {
-        padding: 1rem;
+        padding: 2rem 1rem;
+        background-color: #FAF9F6; 
+        border-radius: 0.55rem;
     }
 
     .cartTitle {
@@ -50,6 +52,7 @@
         font-weight: 600;
         text-decoration: none;
         color: #333;
+        background-color: #FAF9F6; 
         display: flex;
         align-items: center;
         justify-content: space-between;

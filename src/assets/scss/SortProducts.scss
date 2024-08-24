@@ -12,9 +12,15 @@
     }
 }
 
+.dropdown-item {
+    &:hover  {
+        color: #007bff  ;
+    }
+}
+
 .dropdown-menu.show {
     margin-top: 0.4rem;
-    background-color: #f3f3f3;
+    background-color: #FAF9F6;
     color: #333;
     border: 1px solid #f8efef;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
