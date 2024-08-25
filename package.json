@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "check:lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "check:tsc": "tsc",
+    "check:type-coverage": "type-coverage --detail --at-least 100 --ignore-files 'test/*'",
+    "check": "run-p check:*",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -31,6 +34,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "npm-run-all2": "^6.2.2",
+    "type-coverage": "^2.29.1",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
