@@ -40,9 +40,24 @@ const SearchResultsPage = () => {
 	useScrollToTop(page);
 
 	if (isLoading) return <Loading />;
-	if (isError) return <p>Error getting data...</p>;
+	if (isError || !data) return <p>Error getting data...</p>;
 
 	const totalPages = data ? Math.ceil(data.total / limit) : 0;
+
+	if (data.products.length === 0) {
+		return (
+			<Container>
+				<h1 className="h2 searchQueryTitle">
+					No product names match:{" "}
+					{searchQuery.charAt(0).toUpperCase() + searchQuery.slice(1)}{" "}
+				</h1>
+				<p>
+					Try searching for something else or go thru a category you are
+					interested in
+				</p>
+			</Container>
+		);
+	}
 
 	return (
 		<Container>
