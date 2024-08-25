@@ -9,6 +9,7 @@ import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
 import Loading from "../components/utils/Loading";
+import "../assets/scss/SearchResultsPage.scss";
 
 const SearchResultsPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -45,6 +46,11 @@ const SearchResultsPage = () => {
 
 	return (
 		<Container>
+			{searchQuery && (
+				<h1 className="h2 searchQueryTitle">
+					{searchQuery.charAt(0).toUpperCase() + searchQuery.slice(1)}
+				</h1>
+			)}
 			<Row>
 				<SortProducts
 					sortBy={sortBy}

@@ -9,6 +9,7 @@ import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
 import Loading from "../components/utils/Loading";
+import "../assets/scss/CategoryPage.scss";
 
 const CategoryPage = () => {
 	const { category } = useParams();
@@ -55,7 +56,12 @@ const CategoryPage = () => {
 
 	return (
 		<Container>
-			<h2>Category: {category}</h2>
+			{category && (
+				<h1 className="h2 selectedCategoryTitle">
+					{category.charAt(0).toUpperCase() + category.slice(1)}
+				</h1>
+			)}
+
 			<Row>
 				<SortProducts
 					sortBy={sortBy}
@@ -78,11 +84,13 @@ const CategoryPage = () => {
 					))}
 			</Row>
 
-			<PaginationComponent
-				currentPage={page}
-				totalPages={totalPages}
-				onPageChange={handlePageChange}
-			/>
+			{totalPages > 1 && (
+				<PaginationComponent
+					currentPage={page}
+					totalPages={totalPages}
+					onPageChange={handlePageChange}
+				/>
+			)}
 		</Container>
 	);
 };
