@@ -9,6 +9,7 @@ import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";
 import PaginationComponent from "../components/utils/PaginationComponent";
 import Loading from "../components/utils/Loading";
+import "../assets/scss/HomePage.scss";
 
 const HomePage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -53,7 +54,7 @@ const HomePage = () => {
 	const totalPages = Math.ceil(productsData.total / limit);
 
 	return (
-		<Container>
+		<Container className="homePageContainer">
 			<Row>
 				<SortProducts
 					sortBy={sortBy}

@@ -60,7 +60,7 @@ const SearchResultsPage = () => {
 	}
 
 	return (
-		<Container>
+		<Container className="searchResultsContainer">
 			{searchQuery && (
 				<h1 className="h2 searchQueryTitle">
 					Products matching:{" "}

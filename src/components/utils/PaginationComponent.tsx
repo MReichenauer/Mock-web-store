@@ -1,4 +1,5 @@
 import Pagination from "react-bootstrap/Pagination";
+import "../../assets/scss/PaginationComponent.scss";
 
 type PaginationProps = {
 	currentPage: number;
@@ -43,25 +44,27 @@ const PaginationComponent: React.FC<PaginationProps> = ({
 	};
 
 	return (
-		<Pagination className="d-flex justify-content-center my-3">
-			<Pagination.First
-				onClick={() => onPageChange(1)}
-				disabled={currentPage === 1}
-			/>
-			<Pagination.Prev
-				onClick={() => onPageChange(currentPage - 1)}
-				disabled={currentPage === 1}
-			/>
-			{getPaginationItems()}
-			<Pagination.Next
-				onClick={() => onPageChange(currentPage + 1)}
-				disabled={currentPage === totalPages}
-			/>
-			<Pagination.Last
-				onClick={() => onPageChange(totalPages)}
-				disabled={currentPage === totalPages}
-			/>
-		</Pagination>
+		<div className="paginationContainer">
+			<Pagination className="d-flex justify-content-center my-3">
+				<Pagination.First
+					onClick={() => onPageChange(1)}
+					disabled={currentPage === 1}
+				/>
+				<Pagination.Prev
+					onClick={() => onPageChange(currentPage - 1)}
+					disabled={currentPage === 1}
+				/>
+				{getPaginationItems()}
+				<Pagination.Next
+					onClick={() => onPageChange(currentPage + 1)}
+					disabled={currentPage === totalPages}
+				/>
+				<Pagination.Last
+					onClick={() => onPageChange(totalPages)}
+					disabled={currentPage === totalPages}
+				/>
+			</Pagination>
+		</div>
 	);
 };
 

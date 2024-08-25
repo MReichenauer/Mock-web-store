@@ -55,7 +55,7 @@ const CategoryPage = () => {
 	const totalPages = Math.ceil(categoryData.total / limit);
 
 	return (
-		<Container>
+		<Container className="categoryContainer">
 			{category && (
 				<h1 className="h2 selectedCategoryTitle">
 					{category.charAt(0).toUpperCase() + category.slice(1)}
