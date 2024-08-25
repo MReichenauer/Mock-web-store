@@ -1,5 +1,5 @@
-import "../assets/scss/Receipt.scss";
-import { CardFormData, CartItem, InvoiceFormData } from "../services/Types";
+import "../../assets/scss/Receipt.scss";
+import { CardFormData, CartItem, InvoiceFormData } from "../../services/Types";
 import { ListGroup, ListGroupItem, Image, Container } from "react-bootstrap";
 
 type ReceiptProps = {

@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "../assets/scss/PaymentForm.scss";
-import OrderSummary from "../components/OrderSummary";
+import OrderSummary from "../components/Nav&Cart&receipt&OrderSummary/OrderSummary";
 import PaymentForm from "../components/forms/paymentForm";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../hooks/contexts/useCart";
 
 const PaymentPage = () => {
 	const { cart, totalPrice } = useCart();

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { ProductsResponse } from "../services/Types";
-import { getSingleCategory } from "../services/apiCommunication";
+import { ProductsResponse } from "../../services/Types";
+import { getSingleCategory } from "../../services/apiCommunication";
 
 export const useSingleCategory = (
 	limit: number,

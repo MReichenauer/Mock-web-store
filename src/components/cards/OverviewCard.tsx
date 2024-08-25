@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "../../assets/scss/OverviewCard.scss";
 import { Container } from "react-bootstrap";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks/contexts/useCart";
 
 type OverviewCardProps = {
 	id: number;

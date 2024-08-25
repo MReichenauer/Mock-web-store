@@ -12,7 +12,7 @@ import trashCanIcon from "../assets/img/svg/trashCan.svg";
 import plusCircle from "../assets/img/svg/plusCircle.svg";
 import minusCircle from "../assets/img/svg/minusCircle.svg";
 import arrowRight from "../assets/img/svg/arrowRight.svg";
-import { useCart } from "../hooks/useCart";
+import { useCart } from "../hooks/contexts/useCart";
 
 const CheckoutPage = () => {
 	const {

@@ -1,7 +1,7 @@
-import { CartItem } from "../services/Types";
+import { CartItem } from "../../services/Types";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
-import "../assets/scss/OrderSummary.scss";
+import "../../assets/scss/OrderSummary.scss";
 import { Container } from "react-bootstrap";
 
 type OrderSummaryProps = {

@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OverviewCard from "../components/cards/OverviewCard";
-import { useProductsBySearch } from "../hooks/useProductsBySearch";
+import { useProductsBySearch } from "../hooks/api/useProductsBySearch";
 import { ProductOverview } from "../services/Types";
 import SortProducts from "../components/utils/SortProducts";
 import useScrollToTop from "../hooks/utils/useScrollToTop";

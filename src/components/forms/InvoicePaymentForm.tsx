@@ -1,7 +1,6 @@
 import { InvoiceFormData } from "../../services/Types";
 import { invoicePaymentSchema } from "../../schemas/paymentSchema";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import { ZodError } from "zod";
 import Button from "react-bootstrap/Button";
@@ -10,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import InputFieldForm from "./InputFieldForm";
 import Row from "react-bootstrap/Row";
 import "../../assets/scss/InvoicePaymentForm.scss";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks/contexts/useCart";
 
 const schema = invoicePaymentSchema;
 

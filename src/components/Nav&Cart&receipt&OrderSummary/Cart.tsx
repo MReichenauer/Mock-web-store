@@ -1,12 +1,12 @@
-import "../assets/scss/Cart.scss";
+import "../../assets/scss/Cart.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
-import trashCanIcon from "../assets/img/svg/trashCan.svg";
-import plusCircle from "../assets/img/svg/plusCircle.svg";
-import minusCircle from "../assets/img/svg/minusCircle.svg";
-import { useCart } from "../hooks/useCart";
+import trashCanIcon from "../../assets/img/svg/trashCan.svg";
+import plusCircle from "../../assets/img/svg/plusCircle.svg";
+import minusCircle from "../../assets/img/svg/minusCircle.svg";
+import { useCart } from "../../hooks/contexts/useCart";
 const Cart = () => {
 	const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
 		useCart();

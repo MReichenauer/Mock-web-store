@@ -8,7 +8,7 @@ import Image from "react-bootstrap/Image";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
-import { useCart } from "../../hooks/useCart";
+import { useCart } from "../../hooks/contexts/useCart";
 
 type DetailCardProps = {
 	data: ProductDetails;

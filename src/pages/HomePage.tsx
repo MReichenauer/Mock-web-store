@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { useAllProducts } from "../hooks/useAllProducts";
+import { useAllProducts } from "../hooks/api/useAllProducts";
 import { ProductOverview } from "../services/Types";
 import Container from "react-bootstrap/Container";
 import OverviewCard from "../components/cards/OverviewCard";

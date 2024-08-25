@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useSingleProduct } from "../hooks/useSingleProduct";
+import { useSingleProduct } from "../hooks/api/useSingleProduct";
 import Container from "react-bootstrap/Container";
 import DetailCard from "../components/cards/DetailCard";
 import useScrollToTop from "../hooks/utils/useScrollToTop";

@@ -1,4 +1,4 @@
-import { useSingleCategory } from "../hooks/useSingleCategory";
+import { useSingleCategory } from "../hooks/api/useSingleCategory";
 import { useParams, useSearchParams } from "react-router-dom";
 import { ProductOverview } from "../services/Types";
 import Container from "react-bootstrap/Container";
