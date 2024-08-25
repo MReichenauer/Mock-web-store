@@ -72,7 +72,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	};
 
 	const totalPrice = () => {
-		return parseFloat(
+		return Number(
 			cart
 				.reduce((total, item) => total + item.price * item.quantity, 0)
 				.toFixed(2),

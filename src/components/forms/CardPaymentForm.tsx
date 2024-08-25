@@ -240,7 +240,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 					className="confirmOrderButton"
 					disabled={cart.length === 0}
 				>
-					Confirm order for ${totalAmount}
+					Confirm order for ${totalAmount.toFixed(2)}
 				</Button>
 			</div>
 		</Form>

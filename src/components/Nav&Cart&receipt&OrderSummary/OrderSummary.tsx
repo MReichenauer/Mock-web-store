@@ -18,7 +18,7 @@ const OrderSummary = ({ cart, total, shipping }: OrderSummaryProps) => {
 
 			{total > 100 ? (
 				<div className="orderSummaryTotal">
-					<h3>Total cost: ${total}</h3>
+					<h3>Total cost: ${total.toFixed(2)}</h3>
 					<p className="mb-0">Products: ${total}</p>
 					<p>Free shipping</p>
 				</div>
