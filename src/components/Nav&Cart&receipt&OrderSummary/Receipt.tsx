@@ -20,7 +20,7 @@ const Receipt = ({
 	expiration,
 }: ReceiptProps) => {
 	return (
-		<Container className="receiptContainer">
+		<Container className="receiptContainer mt-5">
 			<div>
 				<h3 className="receiptTitle">Order Confirmation</h3>
 			</div>

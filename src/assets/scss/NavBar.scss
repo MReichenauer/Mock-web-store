@@ -93,14 +93,18 @@
         
             .cartCount {
                 position: absolute;
-                top: -5px; 
+                top: -8px; 
                 right: -5px;
                 background-color: #7b68ee; 
                 color: #ffffff; 
-                font-size: 0.75rem; 
-                padding: 1px 4px; 
+                font-size: 0.8rem; 
+                width: 1.4rem;
+                aspect-ratio: 1;
                 border-radius: 50%;
                 border: 1px solid #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 	}
