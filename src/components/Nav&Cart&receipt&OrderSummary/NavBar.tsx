@@ -47,7 +47,9 @@ const NavBar = () => {
 									className="cartButton"
 								>
 									<img src={cartIcon} alt="Cart" width="22" height="22"></img>
-									<span className="cartCount">{cart.length}</span>
+									<span className="cartCount">
+										{!cart.length ? 0 : cart.length}
+									</span>
 								</Button>
 							</Nav>
 							<Navbar.Toggle

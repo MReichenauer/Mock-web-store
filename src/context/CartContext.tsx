@@ -22,12 +22,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 		const storedCart = localStorage.getItem("cart");
 		if (storedCart) {
 			try {
-				return JSON.parse(storedCart);
+				return JSON.parse(storedCart) as CartItem[];
 			} catch (error) {
 				console.log("Could not get storedCart: ", error);
 				return [];
 			}
 		}
+		return [];
 	});
 
 	useEffect(() => {

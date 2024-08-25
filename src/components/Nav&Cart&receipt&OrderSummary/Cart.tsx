@@ -13,7 +13,7 @@ const Cart = () => {
 
 	return (
 		<>
-			{cart.length === 0 ? (
+			{!cart || cart.length === 0 ? (
 				<p className="emptyCartMessage">Your cart is empty.</p>
 			) : (
 				cart.map((item) => (
