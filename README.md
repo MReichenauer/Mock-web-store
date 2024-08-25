@@ -2,6 +2,10 @@
 
 This is a project i will be working on during my summer break from my studies. My goal is to build a mock web store using data from Dummy json API.
 
+## Built as a Vite + React.ts web app
+
+## If you try this app on its deployed version no money will be drawn, there is no bank service connected. This is just a MOCK store i made for myself to learn!
+
 ## Dependencies
 
 1. **Bootstrap/React-Bootstrap**: For ui components
@@ -9,17 +13,15 @@ This is a project i will be working on during my summer break from my studies. M
 3. **Tanstack Query**: For handling data fetching and state management
 4. **React-router-dom**: For routing between pages
 5. **Sass**: For CSS
-
-## Goals
-
-1. List of all products with pagination
-2. Filter products by category
-3. Sort products by price, alphabetically, rating
-4. Search for a specific product
-5. View detailed information about a selected product
-6. Add and remove products from cart
-7. View cart summary and move on to checkout
+6. **Zod**: For validating schema for forms
 
 ### API DOCS
 
 https://dummyjson.com/docs/products
+
+### Run project localy
+
+1. Clone down the repo
+2. Run `npm i` in the root of the project
+3. Run `npm run dev` in the root of the project
+4. Open your favorite browser at localhost and play around
