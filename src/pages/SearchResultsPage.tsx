@@ -63,6 +63,7 @@ const SearchResultsPage = () => {
 		<Container>
 			{searchQuery && (
 				<h1 className="h2 searchQueryTitle">
+					Products matching:{" "}
 					{searchQuery.charAt(0).toUpperCase() + searchQuery.slice(1)}
 				</h1>
 			)}
