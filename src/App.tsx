@@ -25,11 +25,8 @@ function App() {
 				<Route path="/search" element={<SearchResultsPage />} />
 			</Routes>
 			<ToastContainer
-				// position="top-right"
-				// autoClose={2000}  // close automatically after 3 seconds instead of the default 5 seconds
-				// autoClose={false}  // don't close automatically
-				// pauseOnFocusLoss={false}  // continue autoclose even if window isn't in focus
-				closeOnClick // close on click
+				autoClose={1800}
+				closeOnClick
 				theme="colored"
 				limit={5}
 				stacked
