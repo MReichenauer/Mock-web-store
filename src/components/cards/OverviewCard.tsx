@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import "../../assets/scss/OverviewCard.scss";
 import { Container } from "react-bootstrap";
 import { useCart } from "../../hooks/contexts/useCart";
+import { toast } from "react-toastify";
 
 type OverviewCardProps = {
 	id: number;
@@ -27,6 +28,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 
 	const handleAddToCart = () => {
 		addToCart({ id, title, price, thumbnail, stock, quantity: 1 });
+		toast.success(`${title} added to cart`);
 	};
 
 	return (

@@ -8,7 +8,8 @@ import CheckoutPage from "./pages/CheckoutPage";
 import PaymentPage from "./pages/PaymentPage";
 import SearchResultsPage from "./pages/SearchResultsPage";
 import NotFoundPage from "./pages/NotFoundPage";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
 	return (
 		<div id="app">
@@ -23,6 +24,16 @@ function App() {
 				<Route path="/payment" element={<PaymentPage />} />
 				<Route path="/search" element={<SearchResultsPage />} />
 			</Routes>
+			<ToastContainer
+				// position="top-right"
+				// autoClose={2000}  // close automatically after 3 seconds instead of the default 5 seconds
+				// autoClose={false}  // don't close automatically
+				// pauseOnFocusLoss={false}  // continue autoclose even if window isn't in focus
+				closeOnClick // close on click
+				theme="colored"
+				limit={5}
+				stacked
+			/>
 		</div>
 	);
 }
