@@ -41,7 +41,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 		>
 			<Container className="mb-4 p-0 d-flex justify-content-center">
 				<Card key={id} className="overviewCardFull">
-					<Link to={`/product/${id}`}>
+					<Link to={`/product/${id}`} className="textStyle">
 						<Card.Img
 							variant="top"
 							src={thumbnail}
@@ -49,16 +49,21 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 							alt={title}
 						/>
 					</Link>
-					<Card.Body className="overviewCardBody">
-						<Link to={`/product/${id}`} className="overviewCardTitle">
-							<Card.Title className="overviewCardTitle">{title}</Card.Title>
-						</Link>
-						<Card.Text className="overviewCardText">Price: ${price}</Card.Text>
-						<Card.Text className="overviewCardText">
-							Rating: {rating.toFixed(1)}/5 ⭐
-						</Card.Text>
-						<Card.Text className="overviewCardText">Stock: {stock}</Card.Text>
 
+					<Card.Body className="overviewCardBody">
+						<Link to={`/product/${id}`} className="textStyle">
+							<Card.Title className="overviewCardTitle">{title}</Card.Title>
+
+							<Card.Text className="overviewCardText">
+								Price: ${price}
+							</Card.Text>
+							<Card.Text className="overviewCardText">
+								Rating: {rating.toFixed(1)}/5 ⭐
+							</Card.Text>
+							<Card.Text className="overviewCardText">Stock: {stock}</Card.Text>
+						</Link>
+					</Card.Body>
+					<Card.Footer className="overviewCardFooter">
 						<Button
 							variant="outline-success"
 							className="overviewCardButton"
@@ -66,7 +71,7 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 						>
 							Add to cart
 						</Button>
-					</Card.Body>
+					</Card.Footer>
 				</Card>
 			</Container>
 		</Col>

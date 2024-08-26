@@ -24,7 +24,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 			try {
 				return JSON.parse(storedCart) as CartItem[];
 			} catch (error) {
-				console.log("Could not get storedCart: ", error);
 				return [];
 			}
 		}

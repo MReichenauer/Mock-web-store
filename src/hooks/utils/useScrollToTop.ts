@@ -9,7 +9,6 @@ const useScrollToTop = (dependency: string | number) => {
 				behavior: "smooth",
 			});
 		}, 0);
-		console.log("New page");
 	}, [dependency]);
 };
 

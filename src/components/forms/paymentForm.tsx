@@ -28,7 +28,6 @@ const PaymentForm = () => {
 	};
 
 	const handleCardSubmit = (data: CardFormData) => {
-		console.log("User (CARD PAYMENT) info:", data, "User cart:", cart);
 		setProducts(cart);
 		setPersonInfo(data);
 		setCardNumber(data.cardNumber);
@@ -40,7 +39,6 @@ const PaymentForm = () => {
 	};
 
 	const handleInvoiceSubmit = (data: InvoiceFormData) => {
-		console.log("User (INVOICE PAYMENT) info:", data, "User cart:", cart);
 		setProducts(cart);
 		setPersonInfo(data);
 		setOrderDone(true);
