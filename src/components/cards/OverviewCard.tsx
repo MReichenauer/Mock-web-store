@@ -3,9 +3,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "../../assets/scss/OverviewCard.scss";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
 import { useCart } from "../../hooks/contexts/useCart";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 type OverviewCardProps = {
 	id: number;
@@ -25,10 +27,13 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 	stock,
 }) => {
 	const { addToCart } = useCart();
+	const [disableButton, setDisableButton] = useState(false);
 
 	const handleAddToCart = () => {
 		addToCart({ id, title, price, thumbnail, stock, quantity: 1 });
 		toast.success(`${title} added to cart`);
+		setDisableButton(true);
+		setTimeout(() => setDisableButton(false), 900);
 	};
 
 	return (
@@ -70,8 +75,15 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 							variant="outline-success"
 							className="overviewCardButton"
 							onClick={handleAddToCart}
+							disabled={disableButton}
 						>
-							Add to cart
+							{disableButton ? (
+								<>
+									<Spinner className="buttonSpinner" /> <span> Loading</span>
+								</>
+							) : (
+								"Add to cart"
+							)}
 						</Button>
 					</Card.Footer>
 				</Card>

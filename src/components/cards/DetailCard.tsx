@@ -1,5 +1,7 @@
 import "../../assets/scss/DetailCard.scss";
-import { Button, Container } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
 import { ProductDetails, Review } from "../../services/Types";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
@@ -9,6 +11,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/contexts/useCart";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 type DetailCardProps = {
 	data: ProductDetails;
@@ -16,6 +20,7 @@ type DetailCardProps = {
 
 const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 	const { addToCart } = useCart();
+	const [disableButton, setDisableButton] = useState(false);
 
 	const handleAddToCart = () => {
 		addToCart({
@@ -26,6 +31,9 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 			stock: data.stock,
 			quantity: 1,
 		});
+		toast.success(`${data.title} added to cart`);
+		setDisableButton(true);
+		setTimeout(() => setDisableButton(false), 900);
 	};
 
 	return (
@@ -58,8 +66,16 @@ const DetailCard: React.FC<DetailCardProps> = ({ data }) => {
 									onClick={handleAddToCart}
 									variant="success"
 									className="ms-auto detailCardButton"
+									disabled={disableButton}
 								>
-									Add to cart
+									{disableButton ? (
+										<>
+											<Spinner className="buttonSpinner me-1" />
+											<span>Loading</span>
+										</>
+									) : (
+										"Add to cart"
+									)}
 								</Button>
 							</div>
 							<ListGroup>
