@@ -89,7 +89,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.firstName}
 							onChange={handleChange}
 							error={errors.firstName}
-							placeholder="Max"
+							placeholder="Enter your first name"
 						/>
 					</Col>
 					<Col md={6}>
@@ -99,7 +99,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.lastName}
 							onChange={handleChange}
 							error={errors.lastName}
-							placeholder="Reichenauer"
+							placeholder="Enter your last name"
 						/>
 					</Col>
 				</Row>
@@ -112,7 +112,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.email}
 							onChange={handleChange}
 							error={errors.email}
-							placeholder="max.reichenauer98@gmail.com"
+							placeholder="Enter your email"
 						/>
 					</Col>
 					<Col md={6}>
@@ -123,7 +123,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.phoneNumber}
 							onChange={handleChange}
 							error={errors.phoneNumber}
-							placeholder="+46709266899"
+							placeholder="Enter your phone number"
 						/>
 					</Col>
 				</Row>
@@ -135,7 +135,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.country}
 							onChange={handleChange}
 							error={errors.country}
-							placeholder="Sweden"
+							placeholder="Enter your country"
 						/>
 					</Col>
 					<Col md={6}>
@@ -145,7 +145,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.city}
 							onChange={handleChange}
 							error={errors.city}
-							placeholder="Helsingborg"
+							placeholder="Enter your city"
 						/>
 					</Col>
 				</Row>
@@ -157,7 +157,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.state}
 							onChange={handleChange}
 							error={errors.state}
-							placeholder="Skåne"
+							placeholder="Enter your State / County"
 						/>
 					</Col>
 					<Col md={6}>
@@ -168,7 +168,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.zipCode}
 							onChange={handleChange}
 							error={errors.zipCode}
-							placeholder="25454"
+							placeholder="Enter your zip code"
 						/>
 					</Col>
 				</Row>
@@ -180,7 +180,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.streetName}
 							onChange={handleChange}
 							error={errors.streetName}
-							placeholder="Christer boijes väg"
+							placeholder="Enter your street name"
 						/>
 					</Col>
 					<Col md={6}>
@@ -191,7 +191,7 @@ const InvoicePaymentForm = ({ handleSubmit }: InvoicePaymentFormProps) => {
 							value={formData.streetNumber}
 							onChange={handleChange}
 							error={errors.streetNumber}
-							placeholder="28"
+							placeholder="Enter your street number"
 						/>
 					</Col>
 				</Row>

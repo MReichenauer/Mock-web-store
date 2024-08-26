@@ -89,7 +89,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.firstName}
 							onChange={handleChange}
 							error={errors.firstName}
-							placeholder="Max"
+							placeholder="Enter your first name"
 						/>
 					</Col>
 					<Col md={6}>
@@ -99,7 +99,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.lastName}
 							onChange={handleChange}
 							error={errors.lastName}
-							placeholder="Reichenauer"
+							placeholder="Enter your last name"
 						/>
 					</Col>
 				</Row>
@@ -112,7 +112,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.email}
 							onChange={handleChange}
 							error={errors.email}
-							placeholder="max.reichenauer98@gmail.com"
+							placeholder="Enter your email address"
 						/>
 					</Col>
 					<Col md={6}>
@@ -123,7 +123,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.phoneNumber}
 							onChange={handleChange}
 							error={errors.phoneNumber}
-							placeholder="+46709266899"
+							placeholder="Enter your phone number"
 						/>
 					</Col>
 				</Row>
@@ -135,7 +135,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.country}
 							onChange={handleChange}
 							error={errors.country}
-							placeholder="Sweden"
+							placeholder="Entry your country"
 						/>
 					</Col>
 					<Col md={6}>
@@ -145,7 +145,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.city}
 							onChange={handleChange}
 							error={errors.city}
-							placeholder="Helsingborg"
+							placeholder="Entry your city"
 						/>
 					</Col>
 				</Row>
@@ -157,7 +157,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.state}
 							onChange={handleChange}
 							error={errors.state}
-							placeholder="Skåne"
+							placeholder="Entry your State / County"
 						/>
 					</Col>
 					<Col md={6}>
@@ -168,7 +168,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.zipCode}
 							onChange={handleChange}
 							error={errors.zipCode}
-							placeholder="25454"
+							placeholder="Enter your zip code"
 						/>
 					</Col>
 				</Row>
@@ -180,7 +180,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.streetName}
 							onChange={handleChange}
 							error={errors.streetName}
-							placeholder="Christer boijes väg"
+							placeholder="Enter your street name"
 						/>
 					</Col>
 					<Col md={6}>
@@ -191,7 +191,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.streetNumber}
 							onChange={handleChange}
 							error={errors.streetNumber}
-							placeholder="28"
+							placeholder="Enter your street number"
 						/>
 					</Col>
 				</Row>
@@ -205,7 +205,7 @@ const CardPaymentForm = ({ handleSubmit }: CardPaymentFormProps) => {
 							value={formData.cardNumber}
 							onChange={handleChange}
 							error={errors.cardNumber}
-							placeholder="9115468543548742"
+							placeholder="Enter your card number"
 						/>
 					</Col>
 					<Col md={3}>
